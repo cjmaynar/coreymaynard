@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load markup %}
+{% load blogtags %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block specific_css %}
+<link rel="stylesheet" href="/files/css/portfolio.css" media="screen" />
+{% endblock %}
+
+{% block specific_js %}
+<script type="text/javascript" src="/files/js/portfolio.js"></script>
+{% endblock %}
+
+{% block content %}
+{% include 'blog/sidebar.html' %}
+{% if latest %}
+<div id="latest_project">
+	<h2><a href="{% url portfolio_detail latest.slug %}">{{latest.title}}</a></h2>
+	<a href="{% url portfolio_detail latest.slug %}"><img src="{{MEDIA_URL}}{{latest.primary.small}}" id="primary" /></a>
+	{{latest.description|make_lead:800|markdown}}
+	<p><a href="{% url portfolio_detail latest.slug %}">Read More</a></p>
+</div>
+
+<h2>Other Completed Projects</h2>
+<div id="slideshow">
+	<div id="slidecontainer">
+		{% for project in projects %}
+        <div class="slide" id="slide-{{project.id}}">
+			<h3>{{ project.title }}</h3>
+			<a href="{% url portfolio_detail project.slug %}"><img src="{{MEDIA_URL}}{{project.primary.small}}" /></a>
+		</div>
+		{% endfor %}
+
+        <ul id="controls">
+            <li><a href="" id="previous" class="button">Previous</a></li>
+            <li><a href="" id="next" class="button">Next</a></li>
+        </ul>
+	</div>
+</div>
+
+{% else %}
+<h2>Oopps...</h2>
+<p>There doesn&rsquo;t appear to be anything here...</p>
+{% endif %}
+{% endblock %}

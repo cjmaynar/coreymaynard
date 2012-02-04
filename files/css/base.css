@@ -1,0 +1,254 @@
+@font-face {
+	font-family: "Graublau Web Regular";
+	src:local("Graublau Web Regular"),
+		url("../type/GraublauWeb.otf") format("opentype");
+}
+@font-face {
+	font-family: "Graublau Web Bold";
+	src:local("Graublau Web Bold"),
+		url("../type/GraublauWebBold.otf") format("opentype");
+}
+
+body {
+	margin:0;
+	background:#ececec;
+	color:#000;
+	font:12px/1.5em "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,p,ol,ul { margin-bottom:18px; }
+h1 { margin-top:20px; }
+
+h1 a {
+	font: 45px/1.25 "Graublau Web Bold";
+	text-decoration:none;
+	letter-spacing:.15em;
+	word-spacing:-.25em;
+	color:#5c5c5c;
+}
+h1 a span { color:rgb(73,190,200); }
+h1 a:active { outline:none; }
+
+h2 {
+	color:#000;
+	font: 30px "Graublau Web Bold";
+	font-weight:normal;
+	letter-spacing:.1em;
+	word-spacing:-.15em;
+}
+
+h3 {
+	color:rgb(29,148,173);
+	font-family:"Graublau Web Regular";
+	font-size:20px;
+}
+
+a:link {color:rgb(140,159,255); }
+a:visited { color:#6b6c72; }
+a:hover { color:rgb(79,200,225); }
+a:active { color:#3a3e52; }
+
+p {
+	line-height:1.5em;
+	margin:1.5em 0;
+}
+
+blockquote { margin:1.5em; }
+
+pre,
+code {
+	font-family: "Panic Sans", Monaco, monospace;
+	display:block;
+	margin-left:20px;
+}
+code {
+	background:#f1f1f1;
+	color:#030303;
+	width:80%;
+}
+pre { border-left:2px solid #000; }
+
+/* * * * * * * *
+ * Form Styles *
+ * * * * * * * */
+form ul li { list-style-type:none; }
+form ul li label {
+	width:100px;
+	display:block;
+	padding:5px 0;
+}
+
+input,
+textarea {
+	border:1px solid rgb(137,218,235);
+	color:#000;
+	background:#fff;
+	padding:3px;
+	font-size:1.2em;
+	letter-spacing:1px;
+}
+input[type='submit'] {
+	margin-left:40px;
+	padding:3px;
+	cursor:pointer;
+}
+input[type='submit']:hover { background:rgb(29,148,173); }
+#search input[type='submit'] { margin:0; } /* Override style for search form */
+
+/* * * * * * *
+ * Structure *
+ * * * * * * */
+
+#header {
+	border-bottom:5px solid #cdd3d4;
+	border-top:1px solid #000;
+	padding:0 10px;
+}
+
+#content { padding:12px; }
+
+#nav ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	font-size:1.3em;
+}
+#nav ul li { margin:5px 0; }
+#nav ul li a {
+	display:inline-block;
+	height:20px;
+	width:100%;
+	padding:5px;
+	font-variant:small-caps;
+}
+#nav ul li a:hover { background:#e3e3e3; }
+#nav ul li a:active { outline:none; }
+
+#list-posts .info li { display:inline-block }
+#list-posts .info li:after {
+	color:rgb(79,200,225); 
+	content:'|';
+	padding-left:5px;
+}
+#list-posts .info li.last:after { content:''; }
+#list-posts .comments { float:right; }
+
+#sidebar {
+	position:relative;
+	float:right;
+	top:0;
+	right:0;
+	width:250px;
+	margin-left:50px;
+}
+
+#sidebar-bio {
+	float: left;
+	margin:0 20px 20px 20px;
+	border:1px solid rgba(166,130,54,.4);
+	-moz-box-shadow:2px 2px 5px rgba(0,0,0,.5);
+}
+
+#footer {
+	background-color:#cdd3d4;
+	border-top:2px solid #808387;
+	margin-top:25px;
+	clear:both;
+}
+#footer #footer-contents {
+	width:960px;
+	margin:0 auto;
+}
+#footer h3 { text-align:center; }
+#footer #updates,
+#footer #music,
+#footer #about-me {
+	float:left;
+	width:290px;
+	padding:10px;
+}
+#footer #copy {
+	font-size:.9em;
+	clear:left;
+	text-align:center;
+	border-top:1px solid #bdc2c4;
+	padding: 5px;
+	margin:0;
+}
+
+/** Page Specific Styles **/
+#lead {
+    width:50%;
+    float:left;
+}
+
+#lead-ins {
+	width:350px;
+	float:right;
+
+}
+#lead-ins h3 { line-height:1.3em; }
+#lead-ins h3 a { display:inline-block; }
+
+#lead-ins div {
+	background: rgba(166,130,54,.1);
+	padding:15px;
+	margin-bottom:10px;
+}
+
+#you-do { clear:left; }
+
+#wrapper,
+#project,
+#post { width:80%; }
+#post #post-date {
+	float:right;
+	margin-top:-3em;
+}
+#post #images {
+	margin:10px;
+	border:1px solid rgba(166,130,54,.4);
+	-moz-box-shadow:2px 2px 5px rgba(0,0,0,.4);
+}
+#post #images img {
+	max-width:25em;
+	max-height:25em;
+	margin:0;
+	padding:0;
+	border:0;
+}
+#post #images p {
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+#post #comments .even,
+#post #comments .odd {
+	margin:5px;
+	padding:5px;
+}
+#post #comments .odd {
+	background: rgba(166,130,54,.1);
+}
+
+
+#drill-down {
+/*Archives page*/
+	float:right;
+	background: rgba(166,130,54,.1);
+	padding:15px;
+}
+
+#bio-image {
+	float: right;
+	margin:10px;
+	border:1px solid rgba(166,130,54,.4);
+	-moz-box-shadow:2px 2px 5px rgba(0,0,0,.5);
+}
+
+/* * * * * * * * *
+ * Resume Styles *
+ * * * * * * * * */
+#resume { width: 50%; }
+#resume h2 { text-align:center; }

@@ -1,0 +1,43 @@
+<div id="sidebar">
+	<div id="nav">
+	<h2>Navigation</h2>
+	<ul>
+		<li><a href="{% url index %}">Home</a></li>
+		<li><a href="{% url blog_index %}">Blog</a></li>
+		<li><a href="{% url portfolio_index %}">Portfolio</a></li>
+		<li><a href="{% url bio %}">About Me</a></li>
+		<li><a href="{% url contact %}">Contact Me</a></li>
+		<li><a href="{% url resume %}">R&eacute;sum&eacute;</a></li>
+		{% if request.user.is_authenticated %}
+		<li><a href="/admin/">Admin</a></li>
+		{% endif %}
+	</ul>
+	</div>
+
+	{% include 'search_form.html' %}
+
+	{% if not is_bio %}
+	<div id="me">
+	<h2>This Is Me</h2>
+	<a href="{% url bio %}"><img src="{{MEDIA_URL}}img/cjmaynar_thumb.jpg" id="sidebar-bio" alt="A photograph of Corey Maynard" title="Look, it's me!" />
+</a>	<ul>
+		<li><a href="{% url bio %}">Meet Me</a></li>
+		<li><a href="{% url contact %}">Work With Me</a></li>
+	</ul>
+	</div>
+	{% endif %}
+
+	{% for year in years %}
+	{% if forloop.first %}
+	<div id="archives">
+		<h2>Archives</h2>
+		<ul>
+	{% endif %}
+		<li><a href="{% url blog_archives year %}">{{year}}</a></li>
+	{% if forloop.last %}
+		</ul>
+		<p><a href="{% url blog_archives %}">See it all!</a></p>
+	</div>
+	{% endif %}
+	{% endfor %}
+</div>

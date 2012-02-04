@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Blog Archives{% endblock %}
+
+{% block content %}
+{% include 'blog/sidebar.html' %}
+<h2>The Archives{% if year %} For {{year}}{% endif %}</h2>
+
+<div id="drill-down">
+<h3>Drill Down by Year</h3>
+	<p>Want a little more control? See posts in a given year:</p>
+	{% for year in years %}
+	{% if forloop.first %}
+	<ul>
+	{% endif %}
+	<li><a href="{% url blog_archives year %}">{{year}}</a></li>
+	{% if forloop.last %}
+	</ul>
+	{% endif %}
+	{% endfor %}
+</div>
+
+<p>Where the old posts go to die.</p>
+{% if year %}
+I wrote {{archives.count}} post{{archives.count|pluralize:'s'}} in {{year}}.</p>
+{% else %}
+<p>I&rsquo;ve written {{archives.count}} post{{archives.count|pluralize:'s'}}, you can take a look through them all down below.</p>
+{% endif %}
+
+{% for post in archives %}
+{% if forloop.first %}
+<ol>
+{% endif %}
+<li><a href="{% url blog_detail post.slug %}">{{post.title}}</a> &ndash; on {{post.date|date:"M j, Y"}}</li>
+{% if forloop.last %}
+</ol>
+{% endif %}
+{% empty %}
+<p>There are no posts for that year.</p>
+{% endfor %}
+{% if year %}
+<h3>Not Seeing What You&rsquo;re Looking For?</h3>
+<p>View the <a href="{% url blog_archives %}">full archives</a>.</p>
+{% endif %}
+{% endblock %}

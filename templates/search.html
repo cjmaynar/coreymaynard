@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+{% include 'blog/sidebar.html' %}
+{% if searched %}
+	<h2>Results</h2>
+	<p>Your search for <strong>{{qstring}}</strong> returned {{results.count}} result{{results.count|pluralize}}.</p>
+	{% for result in results %}
+	{% if forloop.first %}
+	<ol>
+	{% endif %}
+	<li><a href="{% url blog_detail result.slug %}">{{result.title}}</a></li>
+	{% if forloop.last %}
+	</ol>
+	{% endif %}
+	{% empty %}
+	<p>Your search for <strong>{{qstring}}</strong> returned no results.</p>
+	<h3>Try Again?</h3>
+	{% include 'search_form.html' %}
+	{% endfor %}
+{% else %}
+	<h2>Search</h2>
+	<p>Search for something!</p>
+	{% include 'search_form.html' %}
+{% endif %}
+
+{% endblock %}

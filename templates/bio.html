@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+{% include 'blog/sidebar.html' %}
+
+<h2>All About Me</h2>
+<img src="{{MEDIA_URL}}img/cjmaynar.jpg" id="bio-image" alt="A photograph of Corey Maynard" title="Look, it's me!" />
+
+<p>As expected, my name is Corey Maynard. I just finished college at <a href="http://www.ucf.edu">University of Central Florida</a>, Orlando. After four years there, I earned a <a href="http://www.dm.ucf.edu">Bachelors of Arts in Digital Media</a>, and a minor in Secure Computing and Networking (SCAN). I am now living in Baltimore, Maryland, and enjoying the new location.</p>
+
+<h3>What I do</h3>
+
+<p>I currently work as a Software Engineer. In my spare time at home, I work to learn more about the web, and improve my skills as a designer and developer.</p>
+
+<p>I am also an active photographer. Around 2006 I first entered into the world of photography with a film camera, and found the art to be very interesting. I quickly grew weary of the slow processing time of film, and jumped into the digital world. While web work is my focus, I hope to continue photography on the side, as both a hobby and source of minor income. I worked as a Staff Photographer with the Central Florida Future at the University of Central Florida for two years.</p>
+{% endblock %}

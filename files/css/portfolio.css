@@ -1,0 +1,99 @@
+a img { border:none; }
+
+#primary {
+    width:40%;
+    max-width:590px;
+}
+
+#latest_project a img {
+	margin:0 25px;
+	border:1px solid rgba(166,130,54,.4);
+	float:right;
+}
+
+.slide { padding: 5px; }
+#controls li { display: inline-block; }
+
+.button {
+    border-top: 1px solid #96d1f8;
+    background: #65a9d7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+    background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+    background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+    background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+    background: -o-linear-gradient(top, #3e779d, #65a9d7);
+    padding: 5px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: white !important;
+    font-size: 14px;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.button:hover {
+    border-top-color: #28597a;
+    background: #28597a;
+    color: #ccc;
+}
+.button:active {
+    border-top-color: #1b435e;
+    background: #1b435e;
+}
+
+#other-projects ol { list-style-type:none; }
+#other-projects ol li img {
+	float:left;
+	margin:10px;
+}
+
+#project-info {
+	float:right;
+	margin:-1.5em 15px 0px 15px;
+}
+#project-info dl { margin:10px; }
+#project-info dl dt { font-weight:bold; }
+#project-info dl dt:after { content:':'; }
+
+#project-images { width:100%; }
+
+#project-code {
+	float:right;
+	margin-top:-1.5em;
+}
+
+#project-screenshot ul,
+#project-code ul {
+	margin:0 0 0 -10px;
+	padding:0;
+}
+
+#project-screenshot ul li,
+#project-code ul li {
+	margin:10px;
+	padding:10px;
+	max-width:460px;
+	border:1px solid rgba(166,130,54,.5);
+	list-style-type:none;
+	-moz-box-shadow:2px 2px 5px rgba(0,0,0,.5);
+}
+
+
+#project-screenshot ul li a img,
+#project-code ul li a img {
+	max-height:330px;
+	max-width:430px;
+	margin:0 auto !important;
+	border:none;
+}
+
+#project-screenshot ul li p,
+#project-code ul li p {
+	margin:0 auto;
+	text-align:center;
+}

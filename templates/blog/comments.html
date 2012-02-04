@@ -1,0 +1,19 @@
+<div id="comments">
+<h3>Comments</h3>
+{% for comment in comments.all %}
+<div class="comment {% cycle "even" "odd" %}">
+	<p><strong><a href="{{comment.website}}">{{comment.author}}</a></strong> said on {{comment.date|date:"M j, Y"}}:</p>
+	<p>{{comment.comment}}</p>
+</div>
+{% empty %}
+<p>This space intentionally left blank.</p>
+{% endfor %}
+</div>
+<h4>Have Something to Say?</h4>
+<p>Questions? Comments? Concerns? Let me know what you&rsquo;re thinking.</p>
+<form action="" method="post">
+<ul>
+	{{form.as_ul}}
+</ul>
+<p><input type="submit" value="Submit" /></p>
+</form>

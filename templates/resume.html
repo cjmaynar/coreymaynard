@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Resum&eacute;{% endblock %}
+
+{% block content %}
+{% include 'blog/sidebar.html' %}
+<div id="resume">
+    <h2>R&eacute;sum&eacute;</h2>
+    <a href="{{ MEDIA_URL }}resume.doc">Download a Copy of My R&eacute;sum&eacute;</a>
+
+    <div id="education">
+    <h3>Education</h3>
+        <h4><a href="http://www.ucf.edu">University of Central Florida</a></h4>
+        <ul>
+            <li>Bachelor of Arts &ndash; <a href="http://www.dm.ucf.edu">Digital Media, Interactive Systems</a></li>
+            <li>Minor in Secure Computing and Networking (SCAN)</li>
+            <li>Graduated in May 2010</li>
+        </ul>
+    </div>
+
+    <div id="work-history">
+    <h3>Work History</h3>
+        <h4><a href="http://northropgrumman.com">Northrop Grumman</a></h4>
+        <p>Software Engineer I &ndash; 2010 to present</p>
+        <ul>
+            <li>Model Based Systems Engineering
+                <ul>
+                    <li>Work in Java and C# Microsoft XNA developing stereoscopic visualizations for systems engineering</li>
+                    <li>Utilized JMS to exchange messages between the application and IBM Rational Rhapsody</li>
+                    <li>Developed for stereoscopic 3D and Microsoft Kinect</li>
+                </ul>
+            </li>
+            <li>NCIC Cyber Situational Awareness
+                <ul>
+                    <li>Development on PHP web appplication to map global and local internet traffic</li>
+                </ul>
+            </li>
+            <li>Other
+                <ul>
+                    <li>Created application for packet manipulation and duplication on a large scale</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4><a href="http://www.cdws.ucf.edu">Course Development and Web Services at UCF</a></h4>
+        <p>Techranger &ndash; 2008 to 2010</p>
+        <ul>
+            <li>Development of Web Based Applications</li>
+            <li>Create HTML documents for university instructors</li>
+            <li>Provide Webcourses@UCF and WebCT tech support for students</li>
+        </ul>
+        
+        <h4><a href="http://www.centralfloridafuture.com/">Central Florida Future</a></h4>
+        <p>Staff Photographer &ndash; 2006 to 2008</p>
+        <ul>
+            <li>View my work on <a href="http://www.flickr.com/photos/viperstrike">Flickr</a></li>
+        </ul>
+    </div>
+
+    <div id="skills">
+    <h3>Skills</h3>
+        <h4>Languages</h4>
+        <p>I have an extensive knowledge of multiple web and markup languages. Including:</p>
+        <ul>
+            <li>(X)HTML &amp; CSS</li>
+            <li>Python / Django</li>
+            <li>MySQL / PostgreSQL</li>
+            <li>JavaScript &amp; jQuery</li>
+            <li>XML</li>
+            <li>PHP</li>
+            <li>C# / XNA</li>
+        </ul>
+        <h4>Software and Operating Systems</h4>
+        <ul>
+            <li>Windows &ndash; Solid understanding of the operating system, plus experience with the following programs:
+                <ul>
+                    <li>Photoshop CS4</li>
+                    <li>Illustrator CS4</li>
+                    <li>Dreamweaver CS4</li>
+                    <li>Flash CS4</li>
+                    <li>Microsoft Office Suite 2010</li>
+                </ul>
+            </li>
+            <li>Linux &ndash; Solid understanding of the operating system (Ubuntu, Fedora/Red Hat, Arch) and shell commands and the following programs:
+                <ul>
+                    <li>vim &ndash; Console Text Editor</li>
+                    <li>GIMP &ndash; Image Editing</li>
+                    <li>Inkscape &ndash; Vector Image Editor</li>
+                </ul>
+            </li>
+            <li>Mac &ndash; Basic understanding of OSX.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
