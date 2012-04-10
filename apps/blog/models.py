@@ -10,7 +10,7 @@ class Post(models.Model):
     lead           = models.TextField()
     allow_comments = models.BooleanField(default=True)
     categories     = models.ManyToManyField('Category', blank=True)
-    image          = models.ForeignKey('core.image', related_name='post', blank=True, null=True)
+    image          = models.ForeignKey('core.Image', related_name='post', blank=True, null=True)
 
     def save(self):
         from django.template.defaultfilters import slugify
