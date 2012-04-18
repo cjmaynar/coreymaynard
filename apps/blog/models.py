@@ -44,7 +44,7 @@ class Comment(models.Model):
     comment      = models.TextField()
 
     def __unicode__(self):
-        return self.author + " " + self.date
+        return self.author + " " + str(self.date)
 
 class Category(models.Model):
     '''What category does a post belong in? Pick it here'''

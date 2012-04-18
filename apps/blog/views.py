@@ -33,7 +33,7 @@ def blog_processor(request):
 def blog_index(request):
     '''The landing page of the blog'''
     try:
-        posts = Post.objects.all()[:10]
+        posts = Post.objects.filter(published=True)[:10]
         return render_response(request, "blog/index.html", vars())
     except:
         return HttpResponseNotFound
@@ -63,9 +63,9 @@ def blog_detail(request, slug):
 def blog_archives(request, year=None):
     '''A collection of all the posts that have been made'''
     if year:
-        archives = Post.objects.exclude(published=None).filter(date__year=year)
+        archives = Post.objects.filter(published=True).filter(date__year=year)
     else:
-        archives = Post.objects.exclude(published=None).order_by('-date')
+        archives = Post.objects.filter(published=True).order_by('-date')
 
     return render_response(request, "blog/archives.html", vars())
 
@@ -73,8 +73,8 @@ def blog_archives(request, year=None):
 def blog_categories(request, category=None):
     '''Posts fall into a category, this allows refinement around a topic'''
     if category:
-        posts = Post.objects.exclude(published=None).filter(categories__name=category)
+        posts = Post.objects.filter(published=True).filter(categories__name=category)
     else:
-        posts = Post.objects.exclude(published=None)
+        posts = Post.objects.filter(published=True)
 
     return render_response(request, "blog/categories.html", vars())
