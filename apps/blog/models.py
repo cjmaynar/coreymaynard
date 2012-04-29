@@ -1,16 +1,18 @@
 from django.db import models
 
+
 class Post(models.Model):
     '''This runs all the blog posts.'''
-    slug           = models.SlugField(unique_for_date='date', editable=False)
-    title          = models.CharField(max_length=255)
-    date           = models.DateTimeField()
-    published      = models.BooleanField(default=False)
-    body           = models.TextField()
-    lead           = models.TextField()
+    slug = models.SlugField(unique_for_date='date', editable=False)
+    title = models.CharField(max_length=255)
+    date = models.DateTimeField()
+    published = models.BooleanField(default=False)
+    body = models.TextField()
+    lead = models.TextField()
     allow_comments = models.BooleanField(default=True)
-    categories     = models.ManyToManyField('Category', blank=True)
-    image          = models.ForeignKey('core.Image', related_name='post', blank=True, null=True)
+    categories = models.ManyToManyField('Category', blank=True)
+    image = models.ForeignKey('core.Image', \
+            related_name='post', blank=True, null=True)
 
     def save(self):
         from django.template.defaultfilters import slugify
@@ -34,17 +36,19 @@ class Post(models.Model):
         ordering = ('-date',)
         get_latest_by = 'date'
 
+
 class Comment(models.Model):
     '''Have something to say about a post? Say it here'''
-    post         = models.ForeignKey(Post, related_name='comments')
-    date         = models.DateTimeField(auto_now_add=True)
-    author       = models.CharField(max_length=255)
-    author_url   = models.URLField(blank=True, null=True)
+    post = models.ForeignKey(Post, related_name='comments')
+    date = models.DateTimeField(auto_now_add=True)
+    author = models.CharField(max_length=255)
+    author_url = models.URLField(blank=True, null=True)
     author_email = models.EmailField(blank=True, null=True)
-    comment      = models.TextField()
+    comment = models.TextField()
 
     def __unicode__(self):
         return self.author + " " + str(self.date)
+
 
 class Category(models.Model):
     '''What category does a post belong in? Pick it here'''
@@ -52,4 +56,3 @@ class Category(models.Model):
 
     def __unicode__(self):
         return self.name
-

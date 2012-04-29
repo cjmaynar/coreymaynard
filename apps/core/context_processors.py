@@ -13,16 +13,17 @@ def grooveshark(request):
             cache.set(feed, data)
 
         songs = []
-        for i in range(0,5):
+        for i in range(0, 5):
             songs.append({
-                'title':data.entries[i].title,
-                'link':data.entries[i].link
+                'title': data.entries[i].title,
+                'link': data.entries[i].link
             })
 
-        return {'songs':songs}
+        return {'songs': songs}
     except:
         #Can't get cache or feed...
-        return {'songs':''}
+        return {'songs': ''}
+
 
 def recent_posts(request):
     '''Get 5 most recent posts from database'''
@@ -30,4 +31,4 @@ def recent_posts(request):
 
     recent = Post.objects.filter(published=True).order_by('-date')[:5]
 
-    return {'recent':recent}
+    return {'recent': recent}

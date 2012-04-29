@@ -4,15 +4,16 @@ from django.contrib.auth.models import User
 from settings import USER_NAME
 from blog.models import Post, Comment
 
+
 class Command(BaseCommand):
     def run_from_argv(self, *args):
         print 'Installing posts...'
-        
+
         user = User.objects.get(username=USER_NAME)
-        
-        for i in range(0,10):
+
+        for i in range(0, 10):
             post = Post(
-                slug = 'post_url'+str(i),
+                slug = 'post_url' + str(i),
                 title = 'Test Post',
                 author = user,
                 status = True,

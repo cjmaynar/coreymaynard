@@ -43,7 +43,7 @@ def blog_detail(request, slug):
     '''View a specific post'''
     from settings import MEDIA_URL
 
-    post     = get_object_or_404(Post, slug=slug)
+    post = get_object_or_404(Post, slug=slug)
     comments = post.comments
 
     if request.POST:
@@ -55,7 +55,7 @@ def blog_detail(request, slug):
             for error in form.errors:
                 print error
     else:
-        form = CommentForm(initial={'post':post.id})
+        form = CommentForm(initial={'post': post.id})
 
     return render_response(request, "blog/detail.html", vars())
 
@@ -73,7 +73,8 @@ def blog_archives(request, year=None):
 def blog_categories(request, category=None):
     '''Posts fall into a category, this allows refinement around a topic'''
     if category:
-        posts = Post.objects.filter(published=True).filter(categories__name=category)
+        posts = Post.objects.filter(published=True) \
+                .filter(categories__name=category)
     else:
         posts = Post.objects.filter(published=True)
 

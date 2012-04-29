@@ -1,8 +1,8 @@
-from django.core.management.base import BaseCommand
+import datetime
 
+from django.core.management.base import BaseCommand
 from portfolio.models import Project, Language
 
-import datetime
 
 class Command(BaseCommand):
     def run_from_argv(self, *args):
@@ -37,7 +37,7 @@ class Command(BaseCommand):
             p.begun = start
             p.completed = today
             p.title = "Project Number %s" % (i,)
-            p.slug  = "project-%s" % (i,)
+            p.slug = "project-%s" % (i,)
             p.client = "Myself"
             p.description = "I did stuff on this project"
             p.save()

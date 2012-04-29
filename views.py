@@ -3,6 +3,7 @@ from django.template  import RequestContext
 from blog.models      import Post
 from forms            import ContactForm
 
+
 def index(request):
     '''The home page of the site'''
     from portfolio.models import Project
@@ -10,6 +11,7 @@ def index(request):
     project = Project.objects.latest()
 
     return render_to_response("index.html", context_instance=RequestContext(request, vars()))
+
 
 def contact(request):
     '''Get in touch with me'''
@@ -26,17 +28,20 @@ def contact(request):
         form = ContactForm()
     return render_to_response("contact.html", context_instance=RequestContext(request, vars()))
 
+
 def bio(request):
     '''My Bio'''
     is_bio = True
 
     return render_to_response("bio.html", context_instance=RequestContext(request, vars()))
 
+
 def resume(request):
     '''The resume page'''
     return render_to_response("resume.html", context_instance=RequestContext(request, vars()))
 
-def search(request): 
+
+def search(request):
     '''Search for a blog post.'''
     from django.db.models import Q
     qstring = request.GET.get('q', '').strip()

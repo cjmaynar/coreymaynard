@@ -18,4 +18,4 @@ urlpatterns = patterns('',
 )
 
 if hasattr(settings, 'MEDIA_ROOT') and not settings.PRODUCTION:
-	urlpatterns += patterns('',(r'^files/(?P<path>.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),)
+    urlpatterns += patterns('', (r'^files/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}), )

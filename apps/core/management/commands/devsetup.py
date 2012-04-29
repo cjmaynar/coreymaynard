@@ -1,25 +1,28 @@
-import os, settings
+import os
+import settings
 
 from django.core.management.base import NoArgsCommand
 from django.core.management.commands import syncdb
+
 
 def confirm(warning=None):
     if warning is not None:
             print warning
     response = raw_input('Continue? (Yes/No)\n').lower().strip()
     while 1:
-            if response not in ('yes','no','y','n'):
+            if response not in ('yes', 'no', 'y', 'n'):
                     response = raw_input('Your answer did not match expected input.\nTry again: ').lower().strip()
                     continue
             else:
-                if response in ('yes','y'):
+                if response in ('yes', 'y'):
                     #continue with setup
                     return True
                 else:
                     #cancel setup
                     break
-                
+
     return False
+
 
 class Command(NoArgsCommand):
     '''This Command is used to replace the default Django syncdb command. It
@@ -27,9 +30,9 @@ class Command(NoArgsCommand):
     the auth module is listed in the INSTALLED_APPS, a superuser is created
     based off the informations in the site's settings file.'''
     def handle_noargs(self, **options):
-        dropcmd   = 'DROP DATABASE %s;' % (settings.DATABASE_NAME,)
+        dropcmd = 'DROP DATABASE %s;' % (settings.DATABASE_NAME,)
         createcmd = 'CREATE DATABASE %s;' % (settings.DATABASE_NAME,)
-        mysqlcmd  = 'mysql -h%s -u%s -p%s' % (
+        mysqlcmd = 'mysql -h%s -u%s -p%s' % (
             settings.DATABASE_HOST,
             settings.DATABASE_USER,
             settings.DATABASE_PASSWORD,
@@ -54,14 +57,16 @@ class Command(NoArgsCommand):
                 if 'django.contrib.auth' in settings.INSTALLED_APPS:
                     #Only add superuser if auth is installed
                     print 'Adding Superuser...'
-                    from django.contrib.auth.management.commands import createsuperuser
+                    from django.contrib.auth.management.commands \
+                            import createsuperuser
                     from django.core.management import call_command
 
-                    call_command('createsuperuser', interactive=True, username=settings.USER_NAME, email=settings.EMAIL)
+                    call_command('createsuperuser', interactive=True, \
+                            username=settings.USER_NAME, email=settings.EMAIL)
 
-                print 
+                print
                 print 'Database setup complete.'
-                ''' 
+                '''
                 if not confirm('Run fixture scripts?'):
                 print 'Exiting.'
                 return

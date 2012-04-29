@@ -19,12 +19,12 @@ class Image(models.Model):
         (2, 'Code')
     )
 
-    title    = models.CharField(max_length=128)
+    title = models.CharField(max_length=128)
     fullsize = models.FileField(upload_to='uploads')
-    small    = models.FileField(upload_to='uploads/small', editable=False)
-    source   = models.CharField(max_length=256, blank=True, null=True)
-    desc     = models.CharField(max_length=256, blank=True, null=True)
-    use      = models.PositiveSmallIntegerField(choices=USES, default=USES[0][0])
+    small = models.FileField(upload_to='uploads/small', editable=False)
+    source = models.CharField(max_length=256, blank=True, null=True)
+    desc = models.CharField(max_length=256, blank=True, null=True)
+    use = models.PositiveSmallIntegerField(choices=USES, default=USES[0][0])
 
     objects = ImageManager()
 
@@ -34,7 +34,7 @@ class Image(models.Model):
             import Image as img
             import settings
             filename = self.fullsize
-            image    = img.open(filename)
+            image = img.open(filename)
 
             height, width = image.size
 
@@ -43,7 +43,8 @@ class Image(models.Model):
                 width = width / 2
 
             image.thumbnail((height, width))
-            image.save('%s/files/uploads/small/%s' % (settings.PROJECT_ROOT, self.fullsize), 'JPEG', quality=80)
+            image.save('%s/files/uploads/small/%s' % \
+                    (settings.PROJECT_ROOT, self.fullsize), 'JPEG', quality=80)
 
             self.small = 'uploads/small/%s' % (filename)
         except:
@@ -53,4 +54,3 @@ class Image(models.Model):
 
     def __unicode__(self):
         return self.title
-    
