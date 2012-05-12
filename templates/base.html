@@ -34,15 +34,15 @@
 		<h3>I Like Music</h3>
 		<p>I spend a lot of time playing music. Here&rsquo;s some of what I&rsquo;ve been listening to lately on <a href="http://www.groveshark.com">Grooveshark</a>:</p>
 		{% for song in songs %}
-		{% if forloop.first %}
-		<ol>
-		{% endif %}
-		<li><a href="{{song.link}}">{{song.title}}</a></li>
-		{% if forloop.last %}
-		</ol>
-		{% endif %}
-		{% empty %}
-		<p>Unable to connect to GrooveShark at this time.</p>
+            {% if forloop.first %}
+            <ol>
+            {% endif %}
+            <li><a href="{{song.link}}">{{song.title}}</a></li>
+            {% if forloop.last %}
+            </ol>
+            {% endif %}
+            {% empty %}
+            <p>Unable to connect to GrooveShark at this time.</p>
 		{% endfor %}
 		</div>
 		<div id="about-me">
@@ -53,16 +53,16 @@
 		</div>
 
 	</div>
-	<p id="copy">&copy; 2008&ndash;2010, <a href="{% url contact %}">Corey Maynard</a></p>
+	<p id="copy">&copy; 2008&ndash;2012, <a href="{% url contact %}">Corey Maynard</a></p>
 	</div>
-<!--Tracking Information-->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-4893395-2");
-pageTracker._trackPageview();
-</script>
+    <!--Tracking Information-->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-4893395-2");
+    pageTracker._trackPageview();
+    </script>
 	</body>
 </html>
