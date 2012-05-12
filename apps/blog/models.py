@@ -45,6 +45,7 @@ class Comment(models.Model):
     author_url = models.URLField(blank=True, null=True)
     author_email = models.EmailField(blank=True, null=True)
     comment = models.TextField()
+    approved = models.BooleanField(default=False)
 
     def __unicode__(self):
         return self.author + " " + str(self.date)

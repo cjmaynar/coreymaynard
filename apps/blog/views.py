@@ -44,7 +44,7 @@ def blog_detail(request, slug):
     from settings import MEDIA_URL
 
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments
+    comments = post.comments.filter(approved=True)
 
     if request.POST:
         form = CommentForm(request.POST)
