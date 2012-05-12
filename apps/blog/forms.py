@@ -12,6 +12,15 @@ class CommentForm(ModelForm):
     author_url = forms.CharField(label="Your Website", required=False)
     author_email = forms.CharField(label="Your Email", required=False)
     comment = forms.CharField(widget=forms.Textarea())
+    extra = forms.CharField(required=False)
+
+    def clean_extra(self):
+        '''If there is contents in the extra field, don't allow the comment'''
+        extra = self.cleaned_data['extra']
+        if extra != '':
+            raise forms.ValidationError(u'Shouldn\'t be doing this...')
+
+        return extra
 
     class Meta:
         model = Comment
