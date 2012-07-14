@@ -1,11 +1,20 @@
 a img { border:none; }
 
-#primary {
+.primary {
     width:40%;
     max-width:590px;
 }
 
-#latest_project a img {
+.projects {
+    margin-top: -3em;
+    width: 80%;
+}
+
+.project h2 {
+    margin-top: 3em;
+}
+
+.project a img {
 	margin:0 25px;
 	border:1px solid rgba(166,130,54,.4);
 	float:right;
@@ -13,6 +22,7 @@ a img { border:none; }
 
 .slide { padding: 5px; }
 #controls li { display: inline-block; }
+
 
 .button {
     border-top: 1px solid #96d1f8;
@@ -45,7 +55,6 @@ a img { border:none; }
     border-top-color: #1b435e;
     background: #1b435e;
 }
-
 #other-projects ol { list-style-type:none; }
 #other-projects ol li img {
 	float:left;

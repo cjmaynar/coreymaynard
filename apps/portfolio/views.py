@@ -7,8 +7,7 @@ from portfolio.models import Project
 def portfolio_index(request):
     '''Render the main page of the portfolio'''
     try:
-        latest = Project.objects.latest()
-        projects = Project.objects.all()[1:]
+        projects = Project.objects.all()
     except:
         latest = None
 
