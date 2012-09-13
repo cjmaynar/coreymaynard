@@ -37,6 +37,12 @@ class Post(models.Model):
         get_latest_by = 'date'
 
 
+class CommentManager(models.Manager):
+    @property
+    def approved_only(self):
+        return self.get_query_set().exclude(approved=False)
+
+
 class Comment(models.Model):
     '''Have something to say about a post? Say it here'''
     post = models.ForeignKey(Post, related_name='comments')
@@ -46,6 +52,8 @@ class Comment(models.Model):
     author_email = models.EmailField(blank=True, null=True)
     comment = models.TextField()
     approved = models.BooleanField(default=False)
+
+    objects = CommentManager()
 
     def __unicode__(self):
         return self.author + " " + str(self.date)

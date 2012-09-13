@@ -32,3 +32,8 @@ def recent_posts(request):
     recent = Post.objects.filter(published=True).order_by('-date')[:5]
 
     return {'recent': recent}
+
+def is_production(request):
+    from settings import PRODUCTION
+
+    return {'is_production': PRODUCTION}

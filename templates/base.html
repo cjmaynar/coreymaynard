@@ -55,6 +55,7 @@
 	</div>
 	<p id="copy">&copy; 2008&ndash;2012, <a href="{% url contact %}">Corey Maynard</a></p>
 	</div>
+    {% if is_production %}
     <!--Tracking Information-->
     <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -64,5 +65,6 @@
     var pageTracker = _gat._getTracker("UA-4893395-2");
     pageTracker._trackPageview();
     </script>
+    {% endif %}
 	</body>
 </html>

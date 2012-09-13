@@ -38,6 +38,7 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'core.context_processors.grooveshark',
     'core.context_processors.recent_posts',
+    'core.context_processors.is_production',
 )
 
 ROOT_URLCONF = 'urls'
