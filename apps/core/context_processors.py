@@ -33,6 +33,15 @@ def recent_posts(request):
 
     return {'recent': recent}
 
+def categories(request):
+    '''Get the categories'''
+    from blog.models import Category
+
+    categories = Category.objects.all()
+
+    return {'categories': categories}
+
+
 def is_production(request):
     from settings import PRODUCTION
 

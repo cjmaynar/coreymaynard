@@ -31,18 +31,18 @@
 		<p>Not enough? Get your fix at the <a href="{% url blog_archives %}">Archives</a>.</p>
 		</div>
 		<div id="music">
-		<h3>I Like Music</h3>
-		<p>I spend a lot of time playing music. Here&rsquo;s some of what I&rsquo;ve been listening to lately on <a href="http://www.groveshark.com">Grooveshark</a>:</p>
-		{% for song in songs %}
+		<h3>Categories</h3>
+		<p>All of my posts here fit under some category or another. You can browse them here.</p>
+		{% for category in categories %}
             {% if forloop.first %}
             <ol>
             {% endif %}
-            <li><a href="{{song.link}}">{{song.title}}</a></li>
+            <li><a href="{% url blog_categories category.name %}">{{category.name}}</a></li>
             {% if forloop.last %}
             </ol>
             {% endif %}
             {% empty %}
-            <p>Unable to connect to GrooveShark at this time.</p>
+            <p>No Categories Exist.</p>
 		{% endfor %}
 		</div>
 		<div id="about-me">
