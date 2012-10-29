@@ -94,7 +94,6 @@ input[type='submit'] {
 }
 input[type='submit']:hover { background:rgb(29,148,173); }
 #search input[type='submit'] { margin:0; } /* Override style for search form */
-#center { text-align: center; display: block; }
 
 
 .button {
@@ -280,9 +279,3 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 	border:1px solid rgba(166,130,54,.4);
 	-moz-box-shadow:2px 2px 5px rgba(0,0,0,.5);
 }
-
-/* * * * * * * * *
- * Resume Styles *
- * * * * * * * * */
-#resume { width: 50%; }
-#resume h2 { text-align:center; }

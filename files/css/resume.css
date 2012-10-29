@@ -1,0 +1,62 @@
+/* * * * * * * * *
+ * Resume Styles *
+ * * * * * * * * */
+hr {
+    width: 50%;
+    margin: 0 auto;
+    color: rgb(73, 190, 200);
+}
+
+#resume {
+    width: 80%;
+    font-size: 1.1em;
+}
+#center { text-align: center; display: block; }
+#resume h2 { text-align:center; }
+#resume h3 {
+    border-bottom: 5px solid #5c5c5c;
+    padding:10px;
+}
+
+#resume h4 {
+    font-size:1.5em;
+    border-left: 3px solid #cdd3d4;
+    padding: 5px;
+}
+
+#resume .section {
+    margin-bottom: 4em;
+}
+
+#resume .dates {
+    float: right;
+    width: 150px;
+    height: 20px;
+    margin-top: -2em;
+    padding:5px;
+    background: rgb(73, 190, 200);
+    text-align:center;
+}
+
+#resume .title {
+    display: block;
+    font-style:italic;
+}
+
+
+
+#skills ul{
+  width:80%;
+  overflow:hidden;
+  border-top:1px solid #ccc;
+  padding: 0;
+}
+#skills li{
+  line-height:1.5em;
+  border-bottom:1px solid #ccc;
+  float:left;
+  display:inline;
+}
+#double li {
+    width: 50%;
+}

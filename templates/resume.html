@@ -2,26 +2,34 @@
 
 {% block title %}R&eacute;sum&eacute;{% endblock %}
 
+{% block specific_css %}
+<link rel="stylesheet" href="/files/css/resume.css" media="screen" />
+{% endblock %}
+
 {% block content %}
 {% include 'blog/sidebar.html' %}
 <div id="resume">
     <h2>R&eacute;sum&eacute;</h2>
     <p id="center">Download a PDF of <a href="{{ MEDIA_URL }}resume.pdf">My R&eacute;sum&eacute;</a></p>
 
-    <div id="education">
-    <h3>Education</h3>
-        <h4><a href="http://www.ucf.edu">University of Central Florida</a></h4>
-        <ul>
-            <li>Graduated in May 2010</li>
-            <li>Bachelor of Arts &ndash; <strong>Digital Media</strong>, Interactive Systems &mdash; Specialization in Web Development and Design with a User Centric Focus.</li>
-            <li>Minor in <strong>Secure Computing and Networking</strong> (SCAN) &mdash; Studies in securing networks and software.</li>
+    <div class="section" id="skills">
+    <h3>Key Skills</h3>
+        <ul id="double">
+            <li><strong>PHP</strong> &ndash; 7 years experience including PHP5, OOP, Wordpress</li>
+            <li><strong>Python / Django</strong> &ndash; 4 years experience working in Python and Django</li>
+            <li><strong>Linux</strong> &ndash; 5 years experience working with CentOS/Fedora on a daily basis</li>
+            <li><strong>MySQL / PostgreSQL</strong> &ndash; Experience building applications in both database formats</li>
+            <li><strong>JavaScript &amp; jQuery</strong> &ndash; 7 years experience working with jQuery and <abbr title="Asyncronous JavaScript and XML">AJAX</abbr></li>
+            <li><strong>(X)HTML &amp; CSS</strong> &ndash; 7 years experience creating valid &amp; semantic sites</li>
+            <li><strong>Agile Work&ndash;flow</strong> &ndash; 2 years experience with Agile Scrum metholodgy</li>
+            <li><strong>Tools</strong> &ndash; Vim, XML, Subversion, Git, Jenkins, PHPUnit, NaturalDocs, Phtoshop/Illustrator</li>
+            <li><strong>Social &amp; Outgoing</strong> &ndash; Friendly, outgoing and fun loving</li>
         </ul>
     </div>
 
-    <div id="work-history">
-    <h3>Work Experience</h3>
-        <h4><a href="http://northropgrumman.com">Northrop Grumman</a></h4>
-        <p>Software Engineer II &ndash; 2010 to present</p>
+    <div class="section" id="work-history">
+    <h3>Employment</h3>
+    <h4>Northrop Grumman &ndash; <a href="http://northropgrumman.com">www.northropgrumman.com</a> <span class="title">Software Engineer II</span> <span class="dates">2010 &ndash; 2012</span></h4>
         <ul>
             <li>NCIC Cyber Situational Awareness IR&amp;D
                 <ul>
@@ -53,8 +61,10 @@
             </li>
         </ul>
 
-        <h4><a href="http://www.cdws.ucf.edu">Course Development and Web Services at UCF</a></h4>
-        <p>Web Developer &ndash; 2008 to 2010</p>
+        <hr />
+
+        <h4>Center for Distributed Learning &ndash; <a href="http://www.cdl.ucf.edu">www.cdl.ucf.edu</a><span class="title">Web Developer</span><span class="dates">2008 &ndash; 2010</span></h4>
+        
         <ul>
             <li>Redbeard / To Be Done 3
                 <ul>
@@ -73,39 +83,24 @@
                 </ul>
             </li>
         </ul>
+
+        <hr />
         
-        <h4><a href="http://www.centralfloridafuture.com/">Central Florida Future</a></h4>
-        <p>Staff Photographer &ndash; 2006 to 2008</p>
+        <h4>Central Florida Future &ndash; <a href="http://www.centralfloridafuture.com/">www.centralfloridafuture.com</a><span class="title">Staff Photographer</span><span class="dates">2006 &ndash; 2008</span></h4>
         <ul>
+            <li>Traveled throughout the area photographing local news and sports events</li>
             <li>View my work on <a href="http://www.flickr.com/photos/viperstrike">Flickr</a></li>
         </ul>
     </div>
 
-    <div id="skills">
-    <h3>Skills</h3>
-        <h4>Languages</h4>
-        <p>I have an extensive knowledge of multiple web and markup languages. Including:</p>
+    <div class="section" id="education">
+    <h3>Education</h3>
+    <h4>University of Central Florida &ndash; <a href="http://www.ucf.edu">www.ucf.edu</a><span class="title">Undergraduate</span><span class="dates">2006 &ndash; 2010</span></h4>
         <ul>
-            <li>PHP</li>
-            <li>Python / Django</li>
-            <li>MySQL / PostgreSQL</li>
-            <li>JavaScript &amp; jQuery</li>
-            <li>(X)HTML &amp; CSS</li>
-            <li>XML</li>
-            <li>C# / XNA</li>
-        </ul>
-        <h4>Software and Operating Systems</h4>
-        <ul>
-            <li>Windows &ndash; Solid understanding of the operating system, plus experience with the following programs:
-                <ul>
-                    <li>Photoshop CS4</li>
-                    <li>Illustrator CS4</li>
-                    <li>Dreamweaver CS4</li>
-                    <li>Flash CS4</li>
-                    <li>Microsoft Office Suite 2010</li>
-                </ul>
-            </li>
-            <li>Linux &ndash; Solid understanding of the operating system (Ubuntu, Fedora/Red Hat, Arch) and shell commands.</li>
+            <li>Bachelor of Arts &ndash; <strong>Digital Media</strong>, Interactive Systems &mdash; Specialization in Web Development and Design with a User Centric Focus.</li>
+            <li>Minor in <strong>Secure Computing and Networking</strong> (SCAN) &mdash; Studies in securing networks and software.</li>
+            <li>Awarded Dean&rsquo;s List multiple semesters</li>
+            <li>Member of UCF Crew team for 4 years</li>
         </ul>
     </div>
 </div>
