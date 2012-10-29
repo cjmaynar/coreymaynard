@@ -16,17 +16,6 @@
 
 	{% include 'search_form.html' %}
 
-	{% if not is_bio %}
-	<div id="me">
-	<h2>This Is Me</h2>
-	<a href="{% url bio %}"><img src="{{MEDIA_URL}}img/cjmaynar_thumb.jpg" id="sidebar-bio" alt="A photograph of Corey Maynard" title="Look, it's me!" />
-</a>	<ul>
-		<li><a href="{% url bio %}">Meet Me</a></li>
-		<li><a href="{% url contact %}">Work With Me</a></li>
-	</ul>
-	</div>
-	{% endif %}
-
 	{% for year in years %}
 	{% if forloop.first %}
 	<div id="archives">

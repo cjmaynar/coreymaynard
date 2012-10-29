@@ -94,6 +94,7 @@ input[type='submit'] {
 }
 input[type='submit']:hover { background:rgb(29,148,173); }
 #search input[type='submit'] { margin:0; } /* Override style for search form */
+#center { text-align: center; display: block; }
 
 
 .button {
