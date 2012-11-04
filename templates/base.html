@@ -32,7 +32,7 @@
 		</div>
 		<div id="music">
 		<h3>Categories</h3>
-		<p>All of my posts here fit under some category or another. You can browse them here.</p>
+		<p>All of my posts here fit under some category or another. Here are the top five categories:</p>
 		{% for category in categories %}
             {% if forloop.first %}
             <ol>
@@ -44,6 +44,7 @@
             {% empty %}
             <p>No Categories Exist.</p>
 		{% endfor %}
+        <p>You can find the rest of them at the <a href="{% url blog_categories %}">Category List</a></p>
 		</div>
 		<div id="about-me">
 		<h3>About Me</h3>

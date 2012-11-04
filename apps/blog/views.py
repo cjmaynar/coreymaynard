@@ -1,6 +1,6 @@
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template  import RequestContext
-from blog.models      import Post
+from blog.models      import Post, Category
 from blog.forms       import CommentForm
 from django.http      import HttpResponseNotFound
 
@@ -76,6 +76,6 @@ def blog_categories(request, category=None):
         posts = Post.objects.filter(published=True) \
                 .filter(categories__name=category)
     else:
-        posts = Post.objects.filter(published=True)
+        categories = Category.objects.all()
 
     return render_response(request, "blog/categories.html", vars())

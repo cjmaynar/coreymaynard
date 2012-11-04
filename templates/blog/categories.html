@@ -2,20 +2,32 @@
 
 {% block title %}Categories{% endblock %}
 {% block content %}
-<h2>Categories</h2>
-<p>All posts in the <strong>{{category}}</strong> category.</p>
+    {% include 'blog/sidebar.html' %}
+    <h2>Categories</h2>
 
-{% for post in posts %}
-{% if forloop.first %}
-<ol>
-{% endif %}
-<li><a href="{% url blog_detail post.slug %}">{{post.title}}</a></li>
-{% if forloop.last %}
-</ol>
-{% endif %}
-{% empty %}
-<p>There are no posts in this category.</p>
-{% endfor %}
-
-
+    {% if category %}
+        <p>There are {{ posts.count }} posts in the <strong>{{ category }}</strong> category:</p>
+        {% for post in posts %}
+        {% if forloop.first %}
+        <ol>
+        {% endif %}
+        <li><a href="{% url blog_detail post.slug %}">{{post.title}}</a></li>
+        {% if forloop.last %}
+        </ol>
+        {% endif %}
+        {% empty %}
+        <p>There are no posts in this category.</p>
+        {% endfor %}
+    {% else %}
+        <p>There are a total of {{ categories.count }} categor{{ categories|pluralize:'y,ies' }}:</p>
+        {% for category in categories %}
+        {% if forloop.first %}
+        <ol>
+        {% endif %}
+        <li><a href="{% url blog_categories category.name %}">{{ category.name }}</a></li>
+        {% if forloop.last %}
+        </ol>
+        {% endif %}
+        {% endfor %}
+    {% endif %}
 {% endblock %}
