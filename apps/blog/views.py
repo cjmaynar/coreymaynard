@@ -1,8 +1,9 @@
-from django.shortcuts import render_to_response, get_object_or_404
-from django.template  import RequestContext
-from blog.models      import Post, Category
+from django.contrib   import messages
 from blog.forms       import CommentForm
 from django.http      import HttpResponseNotFound
+from blog.models      import Post, Category
+from django.shortcuts import render_to_response, get_object_or_404
+from django.template  import RequestContext
 
 
 def render_response(request, *args, **kwargs):
@@ -50,7 +51,10 @@ def blog_detail(request, slug):
         form = CommentForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Comment saved, awaiting approval')
+
         else:
+            messages.error(request, 'Invalid form, please check and resubmit')
             #Got to do something here to scroll down to the form on error
             for error in form.errors:
                 print error

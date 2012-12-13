@@ -24,9 +24,9 @@ class CommentForm(ModelForm):
         return extra
 
     def clean_math(self):
-        '''Verify that someone is can do basic math'''
+        '''Verify that someone can do basic math'''
         math = self.cleaned_data['math']
-        if math != 7:
+        if int(math) != 7:
             raise forms.ValidationError(u'5 + 2 = 7')
 
         return math

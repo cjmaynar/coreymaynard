@@ -54,6 +54,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.markup',
     'django.contrib.sessions',
+    'django.contrib.messages',
     #'django.contrib.sites',
     'core',
     'blog',

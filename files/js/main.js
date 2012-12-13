@@ -12,4 +12,9 @@ $().ready(function() {
 		$info = $(this).next();
 		timer = setTimeout(function(){$info.slideUp(90);},1500);
 	});
+
+    $("#hide").click(function(event) {
+        event.preventDefault();
+        $(this).parent().parent().slideUp();
+    });
 });

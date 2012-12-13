@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="/files/css/base.css" media="screen" />
 		{% block specific_css %}{% endblock %}
 		<script type="text/javascript" src="/files/js/jquery-1.4.1.min.js"></script>
+		<script type="text/javascript" src="/files/js/main.js"></script>
 		{% block specific_js %}
 		{% endblock %}
 	</head>
@@ -14,6 +15,17 @@
 		<h1><a href="{% url index %}"><span>Corey</span> Maynard</a></h1>
 	</div>
 	<div id="content">
+    {% if messages %}
+    <div id="user-messages">
+        <h2>Messages</h2>
+        <ul>
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        <p><a id="hide" class="button" href="">Hide</a></p>
+    </div>
+    {% endif %}
 	{% block content %}{% endblock %}
 	</div>
 	<div id="footer">

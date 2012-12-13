@@ -209,6 +209,21 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 	margin:0;
 }
 
+#user-messages {
+    border: 1px solid #000;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#user-messages h2 {
+    text-align: center;
+}
+
+#user-messages p {
+    margin:10px;
+    text-align: right;
+}
+
 /** Page Specific Styles **/
 #lead {
     width:50%;
