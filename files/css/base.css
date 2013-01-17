@@ -40,8 +40,11 @@ h2 {
 h3 {
 	color:rgb(29,148,173);
 	font-family:"Graublau Web Regular";
-	font-size:20px;
+	font-size:25px;
 }
+
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
 
 a:link {color:rgb(140,159,255); }
 a:visited { color:#6b6c72; }
