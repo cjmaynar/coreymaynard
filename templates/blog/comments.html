@@ -12,8 +12,49 @@
 <h4>Have Something to Say?</h4>
 <p>Questions? Comments? Concerns? Let me know what you&rsquo;re thinking.</p>
 <form action="" method="post">
+    {{ form.non_field_errors }}
 <ul>
-	{{form.as_ul}}
+    <li><span><label for="id_author">Your Name:</label>
+    {% for error in form.author.errors %}
+        <strong>{{ error|escape }}</strong>
+    {% endfor %}
+    </span>
+    {{ form.author }}
+    </li>
+    <li><span><label for="id_author_url">Your Website (optional):</label>
+    {% for error in form.author_url.errors %}
+        <strong>{{ error|escape }}</strong>
+    {% endfor %}
+    </span>
+    {{ form.author_url}}
+    </li>
+    <li><span><label for="id_author_email">Your Email (optional):</label>
+    {% for error in form.author_email.errors %}
+        <strong>{{ error|escape }}</strong>
+    {% endfor %}
+    </span>
+    {{ form.author_email}}
+    </li>
+    <li><span><label for="id_comment">Comments:</label>
+    {% for error in form.comment.errors %}
+        <strong>{{ error|escape }}</strong>
+    {% endfor %}
+    </span>
+    {{ form.comment}}
+    </li>
+    <li><span><label for="id_math">What&rsquo;s 5 + 2?:</label>
+    {% for error in form.math.errors %}
+        <strong>{{ error|escape }}</strong>
+    {% endfor %}
+    </span>
+    {{ form.math}}
+    </li>
+    <li><span><label for="id_extra">Extra</label>
+    {% for error in form.extra.errors %}
+        <strong>{{ error|escape }}</strong>
+    {% endfor %}
+    {{ form.extra}}
+    </li>
 </ul>
 <p><input type="submit" value="Submit" /></p>
 </form>

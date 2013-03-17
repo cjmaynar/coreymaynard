@@ -74,11 +74,19 @@ pre { border-left:2px solid #000; }
 /* * * * * * * *
  * Form Styles *
  * * * * * * * */
-form ul li { list-style-type:none; }
-form ul li label {
-	width:100px;
-	display:block;
+form ul li {
+    list-style-type:none;
+    margin: 10px 0;
+}
+form ul li span {
+	display: block;
 	padding:5px 0;
+}
+form ul li ul {
+    margin:0;
+    padding: 0;
+    display: inline;
+    font-weight: bold;
 }
 
 input,
