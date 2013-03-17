@@ -290,6 +290,10 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 #post #comments .odd {
 	background: rgba(166,130,54,.1);
 }
+#post #comments .admin {
+    border: 2px solid rgba(166,130,54,.1);
+	background: #8AA7AD;
+}
 
 
 #drill-down {

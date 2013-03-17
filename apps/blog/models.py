@@ -52,6 +52,7 @@ class Comment(models.Model):
     author_email = models.EmailField(blank=True, null=True)
     comment = models.TextField()
     approved = models.BooleanField(default=False)
+    admin_comment = models.BooleanField(default=False)
 
     objects = CommentManager()
 

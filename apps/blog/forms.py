@@ -33,4 +33,4 @@ class CommentForm(ModelForm):
 
     class Meta:
         model = Comment
-        exclude = ('approved',)
+        exclude = ('approved', 'admin_comment',)

@@ -1,9 +1,16 @@
+{% load markup %}
 <div id="comments">
 <h3>Comments</h3>
 {% for comment in post.comments.approved_only %}
-<div class="comment {% cycle "even" "odd" %}">
-	<p><strong><a href="{{comment.website}}">{{comment.author}}</a></strong> said on {{comment.date|date:"M j, Y"}}:</p>
-	<p>{{comment.comment}}</p>
+<div class="comment {% cycle "even" "odd" %} {% if comment.admin_comment %}admin{% endif %}">
+    <p>
+    {% if comment.website %}
+    <strong><a href="{{comment.website}}">{{comment.author}}</a></strong>
+    {% else %}
+    <strong>{{ comment.author }}</strong>
+    {% endif %}
+    said on {{comment.date|date:"M j, Y"}}:</p>
+	{{comment.comment|markdown}}
 </div>
 {% empty %}
 <p>This space intentionally left blank.</p>
@@ -19,7 +26,12 @@
         <strong>{{ error|escape }}</strong>
     {% endfor %}
     </span>
-    {{ form.author }}
+    <input type="text" name="author" id="id_author"
+        {% if request.user.is_authenticated %}
+        value="Corey Maynard"
+        {% endif %}
+    />
+
     </li>
     <li><span><label for="id_author_url">Your Website (optional):</label>
     {% for error in form.author_url.errors %}
@@ -40,7 +52,8 @@
         <strong>{{ error|escape }}</strong>
     {% endfor %}
     </span>
-    {{ form.comment}}
+    <p>You can use <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> formatting here.</p>
+    {{ form.comment }}
     </li>
     <li><span><label for="id_math">What&rsquo;s 5 + 2?:</label>
     {% for error in form.math.errors %}
@@ -56,5 +69,5 @@
     {{ form.extra}}
     </li>
 </ul>
-<p><input type="submit" value="Submit" /></p>
+<p><input type="hidden" name="post" value="{{ post.id }}" /><input type="submit" value="Submit" /></p>
 </form>
