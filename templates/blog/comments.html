@@ -29,7 +29,8 @@
     <input type="text" name="author" id="id_author"
         {% if request.user.is_authenticated %}
         value="Corey Maynard"
-        {% elif request.POST.author %}
+        {% endif %}
+        {% if request.POST.author %}
         value="{{ request.POST.author }}"
         {% endif %}
     />
