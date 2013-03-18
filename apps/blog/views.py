@@ -49,18 +49,16 @@ def blog_detail(request, slug):
 
     if request.POST:
         form = CommentForm(request.POST)
-
-        if request.user.is_authenticated:
-            form.admin_comment = True
-            form.approved = True
-
         if form.is_valid():
             comment = form.save(commit=False)
             if request.user.is_authenticated:
                 comment.admin_comment = True
                 comment.approved = True
+            else:
+                comment.admin_comment = False
+                comment.approved = False
+                
             comment.save()
-
             messages.success(request, 'Comment saved, awaiting approval')
 
         else:
