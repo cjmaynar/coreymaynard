@@ -51,7 +51,7 @@ def blog_detail(request, slug):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
-            if request.user.is_authenticated:
+            if request.user.is_authenticated():
                 comment.admin_comment = True
                 comment.approved = True
             else:
