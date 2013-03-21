@@ -1,4 +1,6 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import patterns, url
+
+from blog.views import LatestPosts
 
 urlpatterns = patterns('blog.views',
     url(r'^$', 'blog_index', name='blog_index'),
@@ -8,5 +10,6 @@ urlpatterns = patterns('blog.views',
     url(r'^categories/$', 'blog_categories', name='blog_categories'),
     url(r'^categories/(?P<category>\w+)/', 'blog_categories', \
             name='blog_categories'),
+    url(r'^rss/$', LatestPosts(), name='blog_rss'),
     url(r'^(?P<slug>[-\w]+)/', 'blog_detail', name='blog_detail'),
 )

@@ -12,13 +12,13 @@
 <div id="list-posts">
 	{% for post in posts %}
         <div class="post">
-        <h2 class="post-title"><a href="{% url blog_detail post.slug %}">{{post.title}}</a></h2>
+        <h2 class="post-title"><a href="{% url 'blog_detail' post.slug %}">{{post.title}}</a></h2>
         <ul class="info">
             {% for category in post.categories.all %}
             {% if forloop.first %}
             <li>Filed Under: 
             {% endif %}
-            <a href="{% url blog_categories category %}">{{category}}</a> {% if not forloop.last %},{% endif %}
+            <a href="{% url 'blog_categories' category %}">{{category}}</a> {% if not forloop.last %},{% endif %}
             {% if forloop.last %}
             </li>
             {% endif %}
@@ -28,10 +28,10 @@
         </ul>
         <div class="teaser">
         {{post.body|make_lead|markdown}}
-        <p><a class="button" href="{% url blog_detail post.slug %}">Read More</a></p>
+        <p><a class="button" href="{% url 'blog_detail' post.slug %}">Read More</a></p>
         </div>
         {% if post.comments %}
-        <p class="comments"><a href="{% url blog_detail post.slug %}#comments">{{post.comments.count}} Comment{{post.comments.count|pluralize}}</a></p>
+        <p class="comments"><a href="{% url 'blog_detail' post.slug %}#comments">{{post.comments.count}} Comment{{post.comments.count|pluralize}}</a></p>
         {% endif %}
         </div>
 	{% empty %}
@@ -39,6 +39,6 @@
         <p>Some one should really get on that...</p>
 	{% endfor %}
 	<h2>Not Enough?</h2>
-	<p>Demand to see more! <a href="{% url blog_archives %}">View Older Posts</a></p>
+	<p>Demand to see more! <a href="{% url 'blog_archives' %}">View Older Posts</a></p>
 </div>
 {% endblock %}

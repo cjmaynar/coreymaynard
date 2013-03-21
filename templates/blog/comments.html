@@ -2,7 +2,7 @@
 <div id="comments">
 <h3>Comments</h3>
 {% for comment in post.comments.approved_only %}
-<div class="comment {% cycle "even" "odd" %} {% if comment.admin_comment %}admin{% endif %}">
+<div class="comment {% cycle "even" "odd" %}{% if comment.admin_comment %} admin{% endif %}">
     <p>
     {% if comment.website %}
     <strong><a href="{{comment.website}}">{{comment.author}}</a></strong>

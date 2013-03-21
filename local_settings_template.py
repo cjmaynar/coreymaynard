@@ -6,12 +6,10 @@ PRODUCTION = False
 TEMPLATE_DEBUG = True
 TEMPLATE_STRING_IF_INVALID = 'NOT FOUND:%s'
 
-ADMIN_MEDIA_PREFIX = ''
-MEDIA_URL = ''
 
-USER_NAME = ''
-NAME      = ''
-EMAIL     = ''
+USER_NAME = 'cjmaynar'
+NAME      = 'Corey Maynard'
+EMAIL     = 'me@coreymayard.com'
 
 ADMINS = (
     (NAME, EMAIL),
@@ -23,7 +21,7 @@ EMAIL_PORT = ""
 
 DATABASES = {
     'default': {
-        'ENGINE' : '',
+        'ENGINE' : 'django.db.backends.mysql',
         'NAME' : '',
         'USER' : '',
         'PASSWORD' : '',

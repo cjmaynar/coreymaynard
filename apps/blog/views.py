@@ -1,9 +1,30 @@
+from django.contrib.syndication.views import Feed
 from django.contrib   import messages
-from blog.forms       import CommentForm
 from django.http      import HttpResponseNotFound
-from blog.models      import Post, Category
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template  import RequestContext
+from django.core.urlresolvers import reverse
+
+from blog.forms       import CommentForm
+from blog.models      import Post, Category
+
+
+class LatestPosts(Feed):
+    title = "Coreymaynard.com Blog"
+    link = "/blog/"
+    description = "The somewhat frequently updated thoughts of Corey Maynard"
+
+    def items(self):
+        return Post.objects.order_by('-date')[:10]
+
+    def item_title(self, item):
+        return item.title
+
+    def item_description(self, item):
+        return item.lead
+
+    def item_link(self, item):
+        return reverse('blog_detail', args=[item.slug])
 
 
 def render_response(request, *args, **kwargs):
@@ -37,7 +58,7 @@ def blog_index(request):
         posts = Post.objects.filter(published=True)[:10]
         return render_response(request, "blog/index.html", vars())
     except:
-        return HttpResponseNotFound
+        return HttpResponseNotFound()
 
 
 def blog_detail(request, slug):

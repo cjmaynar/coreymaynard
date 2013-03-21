@@ -13,7 +13,7 @@
 	{% if forloop.first %}
 	<ul>
 	{% endif %}
-	<li><a href="{% url blog_archives year %}">{{year}}</a></li>
+	<li><a href="{% url 'blog_archives' year %}">{{year}}</a></li>
 	{% if forloop.last %}
 	</ul>
 	{% endif %}
@@ -31,7 +31,7 @@ I wrote {{archives.count}} post{{archives.count|pluralize:'s'}} in {{year}}.</p>
 {% if forloop.first %}
 <ol>
 {% endif %}
-<li><a href="{% url blog_detail post.slug %}">{{post.title}}</a> &ndash; on {{post.date|date:"M j, Y"}}</li>
+<li><a href="{% url 'blog_detail' post.slug %}">{{post.title}}</a> &ndash; on {{post.date|date:"M j, Y"}}</li>
 {% if forloop.last %}
 </ol>
 {% endif %}
@@ -40,6 +40,6 @@ I wrote {{archives.count}} post{{archives.count|pluralize:'s'}} in {{year}}.</p>
 {% endfor %}
 {% if year %}
 <h3>Not Seeing What You&rsquo;re Looking For?</h3>
-<p>View the <a href="{% url blog_archives %}">full archives</a>.</p>
+<p>View the <a href="{% url 'blog_archives' %}">full archives</a>.</p>
 {% endif %}
 {% endblock %}

@@ -12,7 +12,7 @@
 	</head>
 	<body>
 	<div id="header">
-		<h1><a href="{% url index %}"><span>Corey</span> Maynard</a></h1>
+		<h1><a href="{% url 'index' %}"><span>Corey</span> Maynard</a></h1>
 	</div>
 	<div id="content">
     {% if messages %}
@@ -35,12 +35,12 @@
 		<p>Interested in what&rsquo;s been happening around here? Here's what I&rsquo;ve had to say lately:</p>
 		<ol>
 			{% for post in recent %}
-			<li><a href="{% url blog_detail slug=post.slug %}">{{post.title}} &ndash; {{post.date|date:"M j, Y"}}</a></li>
+			<li><a href="{% url 'blog_detail' slug=post.slug %}">{{post.title}} &ndash; {{post.date|date:"M j, Y"}}</a></li>
 			{% empty %}
 			<li>There doesn't appear to be anything here...</li>
 			{% endfor %}
 		</ol>
-		<p>Not enough? Get your fix at the <a href="{% url blog_archives %}">Archives</a>.</p>
+		<p>Not enough? Get your fix at the <a href="{% url 'blog_archives' %}">Archives</a>. Or, subscribe to <abbr title="Really Simple Syndication"><a href="{% url 'blog_rss' %}">RSS</a></abbr> feed.</p>
 		</div>
 		<div id="music">
 		<h3>Categories</h3>
@@ -49,23 +49,23 @@
             {% if forloop.first %}
             <ol>
             {% endif %}
-            <li><a href="{% url blog_categories category.name %}">{{category.name}}</a></li>
+            <li><a href="{% url 'blog_categories' category.name %}">{{category.name}}</a></li>
             {% if forloop.last %}
             </ol>
             {% endif %}
             {% empty %}
             <p>No Categories Exist.</p>
 		{% endfor %}
-        <p>You can find the rest of them at the <a href="{% url blog_categories %}">Category List</a></p>
+        <p>You can find the rest of them at the <a href="{% url 'blog_categories' %}">Category List</a></p>
 		</div>
 		<div id="about-me">
 		<h3>About Me</h3>
 		<p>I am Corey Maynard, web developer and designer in Baltimore, Maryland.</p>
-		<p>Here I <a href="{% url blog_index %}">write</a> about my work, and topics that intrest me in the field. Learn more <a href="{% url bio %}">About Me</a>.</p>
+		<p>Here I <a href="{% url 'blog_index' %}">write</a> about my work, and topics that intrest me in the field. Learn more <a href="{% url 'bio' %}">About Me</a>.</p>
 		</div>
 
 	</div>
-	<p id="copy">&copy; 2008&ndash;2012, <a href="{% url contact %}">Corey Maynard</a></p>
+	<p id="copy">&copy; 2008&ndash;2013, <a href="{% url 'contact' %}">Corey Maynard</a></p>
 	</div>
     {% if is_production %}
     <!--Tracking Information-->

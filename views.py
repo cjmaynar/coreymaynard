@@ -7,9 +7,7 @@ from forms            import ContactForm
 def index(request):
     '''The home page of the site'''
     from portfolio.models import Project
-
     project = Project.objects.latest()
-
     return render_to_response("index.html", context_instance=RequestContext(request, vars()))
 
 

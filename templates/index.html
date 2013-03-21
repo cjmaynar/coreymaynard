@@ -8,26 +8,26 @@
 <div id="wrapper">
     <div id="lead">
         <h2>Hello,</h2>
-        <p>I am a web developer and designer from Baltimore, Maryland. I have over 5 years experience in building web sites. I create valid, and semantic web sites. You can learn more <a href="{% url bio %}">About Me</a> by clicking the link.
+        <p>I am a web developer and designer from Baltimore, Maryland. I have over 5 years experience in building web sites. I create valid, and semantic web sites. You can learn more <a href="{% url 'bio' %}">About Me</a> by clicking the link.
 
-        <p>On this site, I talk about <a href="{% url blog_index %}">things I find interesting</a>, ranging from web related topics to how I do things in Linux. Additionally, the site is used as a portfolio to <a href="{% url portfolio_index %}">showcase</a> my most recent projects and work.</p>
+        <p>On this site, I talk about <a href="{% url 'blog_index' %}">things I find interesting</a>, ranging from web related topics to how I do things in Linux. Additionally, the site is used as a portfolio to <a href="{% url 'portfolio_index' %}">showcase</a> my most recent projects and work.</p>
     </div>
 
     <div id="lead-ins">
         <div id="in-which">
-            <h3>Recently, I&rsquo;ve Been Thinking About <a href="{% url blog_detail recent.0.slug %}">{{recent.0.title}},</a></h3>
+            <h3>Recently, I&rsquo;ve Been Thinking About <a href="{% url 'blog_detail' recent.0.slug %}">{{recent.0.title}},</a></h3>
             {{recent.0.lead|markdown}}
         </div>
 
         <div id="finished">
-            <h3>I Recently Finished Work on <a href="{% url portfolio_detail project.slug %}">{{project.title}},</a></h3>
+            <h3>I Recently Finished Work on <a href="{% url 'portfolio_detail' project.slug %}">{{project.title}},</a></h3>
             <p>A {{project.short_lead}}.</p>
         </div>
     </div>
 
     <div id="you-do">
         <h2>What do You do?</h2>
-        <p>Want to make do something together? You should <a href="{% url contact %}">Contact Me</a> so that we can get started.</p>
+        <p>Want to make do something together? You should <a href="{% url 'contact' %}">Contact Me</a> so that we can get started.</p>
     </div>
 </div>
 {% endblock %}

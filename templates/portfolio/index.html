@@ -14,10 +14,10 @@
 <div class="projects">
 {% for project in projects %}
     <div class="project">
-        <h2><a href="{% url portfolio_detail project.slug %}">{{project.title}}</a></h2>
-        <a href="{% url portfolio_detail project.slug %}"><img src="{{MEDIA_URL}}{{project.primary.small}}" class="primary" /></a>
+        <h2><a href="{% url 'portfolio_detail' project.slug %}">{{project.title}}</a></h2>
+        <a href="{% url 'portfolio_detail' project.slug %}"><img src="{{MEDIA_URL}}{{project.primary.small}}" class="primary" /></a>
         {{project.description|make_lead:800|markdown}}
-        <p><a class="button" href="{% url portfolio_detail project.slug %}">Read More</a></p>
+        <p><a class="button" href="{% url 'portfolio_detail' project.slug %}">Read More</a></p>
     </div>
 {% empty %}
     <h2>Oopps...</h2>
