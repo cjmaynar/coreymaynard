@@ -13,7 +13,7 @@ path.append(DJANGO_ROOT + '/apps')
 MEDIA_ROOT = normpath(join(DJANGO_ROOT, 'files'))
 MEDIA_URL = '/files/'
 
-STATIC_ROOT = normpath(join(SITE_ROOT, 'staticfiles'))
+STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))
 STATIC_URL = '/static/'
 
 WSGI_APPLICATION = 'wsgi.application'
@@ -27,6 +27,8 @@ LANGUAGE_CODE = 'en-us'
 SITE_ID = 1
 
 USE_I18N = False
+
+ALLOWED_HOSTS = '*'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'nlz-#l7of9rd5n54sc00+rn3lb@&d#0g)_a_z=izyy_wlcko^e'
@@ -54,6 +56,10 @@ ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     DJANGO_ROOT +'/templates',
+)
+
+STATICFILES_DIRS = (
+    DJANGO_ROOT + '/files',
 )
 
 # List of finder classes that know how to find static files in
