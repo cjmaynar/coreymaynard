@@ -6,7 +6,6 @@ PRODUCTION = False
 TEMPLATE_DEBUG = True
 TEMPLATE_STRING_IF_INVALID = 'NOT FOUND:%s'
 
-
 USER_NAME = 'cjmaynar'
 NAME      = 'Corey Maynard'
 EMAIL     = 'me@coreymayard.com'

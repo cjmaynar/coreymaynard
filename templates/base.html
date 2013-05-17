@@ -5,7 +5,7 @@
 		<title>{% block title %}{% endblock %}</title>
 		<link rel="stylesheet" href="/files/css/base.css" media="screen" />
 		{% block specific_css %}{% endblock %}
-		<script type="text/javascript" src="/files/js/jquery-1.4.1.min.js"></script>
+		<script type="text/javascript" src="/files/js/jquery-2.0.0.min.js"></script>
 		<script type="text/javascript" src="/files/js/main.js"></script>
 		{% block specific_js %}
 		{% endblock %}
@@ -61,7 +61,7 @@
 		<div id="about-me">
 		<h3>About Me</h3>
 		<p>I am Corey Maynard, web developer and designer in Baltimore, Maryland.</p>
-		<p>Here I <a href="{% url 'blog_index' %}">write</a> about my work, and topics that intrest me in the field. Learn more <a href="{% url 'bio' %}">About Me</a>.</p>
+		<p>Here I <a href="{% url 'blog_index' %}">write</a> about my work, and topics that interest me in the field. Learn more <a href="{% url 'bio' %}">About Me</a>.</p>
 		</div>
 
 	</div>
