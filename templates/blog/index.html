@@ -13,9 +13,6 @@
 	{% for post in posts %}
         <div class="post">
         <h2 class="post-title"><a href="{% url 'blog_detail' post.slug %}">{{post.title}}</a></h2>
-        {% if post.comments %}
-        <p class="comments"><a href="{% url 'blog_detail' post.slug %}#comments">{{post.comments.count}} Comment{{post.comments.count|pluralize}}</a></p>
-        {% endif %}
         <ul class="info">
             {% for category in post.categories.all %}
             {% if forloop.first %}
@@ -29,6 +26,9 @@
             <li>By Corey Maynard</li>
             <li class="last">{{post.date|date:"M j, Y"}}</li>
         </ul>
+        {% if post.comments.count != 0 %}
+        <p class="comments"><a href="{% url 'blog_detail' post.slug %}#comments">{{post.comments.count}} Comment{{post.comments.count|pluralize}}</a></p>
+        {% endif %}
         <div class="teaser">
         {{post.body|make_lead|markdown}}
         <p><a class="button" href="{% url 'blog_detail' post.slug %}">Read More</a></p>
