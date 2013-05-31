@@ -1,4 +1,7 @@
+import Image as img
+
 from django.db import models
+from settings import MEDIA_ROOT
 
 
 class ImageManager(models.Manager):
@@ -30,25 +33,21 @@ class Image(models.Model):
 
     def save(self):
         '''On save, create a downsized image to use as a preview.'''
-        try:
-            import Image as img
-            import settings
-            filename = self.fullsize
-            image = img.open(filename)
 
-            height, width = image.size
+        filename = self.fullsize
+        image = img.open(filename)
 
-            while height > 600:
-                height = height / 2
-                width = width / 2
+        height, width = image.size
 
-            image.thumbnail((height, width))
-            image.save('%s/files/uploads/small/%s' % \
-                    (settings.PROJECT_ROOT, self.fullsize), 'JPEG', quality=80)
+        while height > 600:
+            height = height / 2
+            width = width / 2
 
-            self.small = 'uploads/small/%s' % (filename)
-        except:
-            print "error on save stuff"
+        image.thumbnail((height, width))
+        image.save('%s/uploads/small/%s' % \
+                (MEDIA_ROOT, self.fullsize), 'JPEG', quality=80)
+
+        self.small = 'uploads/small/%s' % (filename)
 
         super(Image, self).save()
 
