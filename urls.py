@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, url, include
 from django.contrib            import admin
+from django.views.generic import TemplateView
 
 from views                     import index
 from settings import PRODUCTION, MEDIA_ROOT
@@ -14,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^resume/$', 'views.resume', name='resume'),
     url(r'^search/$', 'views.search', name='search'),
     url(r'^contact/$', 'views.contact', name='contact'),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 )
 
 if not PRODUCTION:
