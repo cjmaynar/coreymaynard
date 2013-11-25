@@ -26,8 +26,8 @@
             <li>By Corey Maynard</li>
             <li class="last">{{post.date|date:"M j, Y"}}</li>
         </ul>
-        {% if post.comments.count != 0 %}
-        <p class="comments"><a href="{% url 'blog_detail' post.slug %}#comments">{{post.comments.count}} Comment{{post.comments.count|pluralize}}</a></p>
+        {% if post.comments.approved_only.count != 0 %}
+        <p class="comments"><a href="{% url 'blog_detail' post.slug %}#comments">{{post.comments.approved_only.count}} Comment{{post.comments.approved_only.count|pluralize}}</a></p>
         {% endif %}
         <div class="teaser">
         {{post.body|make_lead|markdown}}
