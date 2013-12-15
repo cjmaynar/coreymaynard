@@ -6,12 +6,12 @@
     <h2>Categories</h2>
 
     {% if category %}
-        <p>There are {{ posts.count }} posts in the <strong>{{ category }}</strong> category:</p>
+    <p>There {{ posts.count|pluralize:"is,are" }} {{ posts.count }} post{{ posts.count|pluralize }} in the <strong>{{ category }}</strong> category:</p>
         {% for post in posts %}
         {% if forloop.first %}
         <ol>
         {% endif %}
-        <li><a href="{% url blog_detail post.slug %}">{{post.title}}</a></li>
+        <li><a href="{% url 'blog_detail' post.slug %}">{{post.title}}</a></li>
         {% if forloop.last %}
         </ol>
         {% endif %}

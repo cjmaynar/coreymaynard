@@ -244,7 +244,6 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 #lead-ins {
 	width:350px;
 	float:right;
-
 }
 #lead-ins h3 { line-height:1.3em; }
 #lead-ins h3 a { display:inline-block; }
@@ -253,13 +252,6 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 	background: rgba(166,130,54,.1);
 	padding:15px;
 	margin-bottom:10px;
-}
-
-/* Hide the leadin section on small screens */
-@media (max-width: 1200px) {
-    #lead-ins {
-        display: none;
-    }
 }
 
 #you-do { clear:left; }
