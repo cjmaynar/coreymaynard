@@ -255,6 +255,13 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 	margin-bottom:10px;
 }
 
+/* Hide the leadin section on small screens */
+@media (max-width: 1200px) {
+    #lead-ins {
+        display: none;
+    }
+}
+
 #you-do { clear:left; }
 
 #contents {
