@@ -11,7 +11,7 @@
 	{% if forloop.first %}
 	<ol>
 	{% endif %}
-	<li><a href="{% url blog_detail result.slug %}">{{result.title}}</a></li>
+	<li><a href="{% url 'blog_detail' result.slug %}">{{result.title}}</a></li>
 	{% if forloop.last %}
 	</ol>
 	{% endif %}
