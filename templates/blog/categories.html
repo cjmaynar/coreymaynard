@@ -11,7 +11,7 @@
         {% if forloop.first %}
         <ol>
         {% endif %}
-        <li><a href="{% url 'blog_detail' post.slug %}">{{post.title}}</a></li>
+        <li><a href="{% url 'blog_detail' post.slug %}">{{post.title}}</a> &ndash; {{ post.lead }}</li>
         {% if forloop.last %}
         </ol>
         {% endif %}
@@ -19,12 +19,12 @@
         <p>There are no posts in this category.</p>
         {% endfor %}
     {% else %}
-        <p>There are a total of {{ categories.count }} categor{{ categories|pluralize:'y,ies' }}:</p>
+        <p>There are a total of {{ categories.count }} categories:</p>
         {% for category in categories %}
         {% if forloop.first %}
         <ol>
         {% endif %}
-        <li><a href="{% url blog_categories category.name %}">{{ category.name }}</a></li>
+        <li><a href="{% url 'blog_categories' category.name %}">{{ category.name }}</a></li>
         {% if forloop.last %}
         </ol>
         {% endif %}
