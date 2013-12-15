@@ -14,15 +14,19 @@
     </div>
 
     <div id="lead-ins">
+        {% if recent %}
         <div id="in-which">
             <h3>Recently, I&rsquo;ve Been Thinking About <a href="{% url 'blog_detail' recent.0.slug %}">{{recent.0.title}},</a></h3>
             {{recent.0.lead|markdown}}
         </div>
+        {% endif %}
 
+        {% if project %}
         <div id="finished">
             <h3>I Recently Finished Work on <a href="{% url 'portfolio_detail' project.slug %}">{{project.title}},</a></h3>
             <p>A {{project.short_lead}}.</p>
         </div>
+        {% endif %}
     </div>
 
     <div id="you-do">

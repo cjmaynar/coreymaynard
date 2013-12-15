@@ -1,7 +1,6 @@
 def recent_posts(request):
     '''Get 5 most recent posts from database'''
     from blog.models import Post
-
     recent = Post.objects.filter(published=True).order_by('-date')[:5]
 
     return {'recent': recent}

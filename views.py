@@ -1,13 +1,16 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render_to_response
 from django.template  import RequestContext
 from blog.models      import Post
 from forms            import ContactForm
 
-
 def index(request):
     '''The home page of the site'''
     from portfolio.models import Project
-    project = Project.objects.latest()
+    try:
+        project = Project.objects.latest()
+    except ObjectDoesNotExist:
+        project = {}
     return render_to_response("index.html", context_instance=RequestContext(request, vars()))
 
 
