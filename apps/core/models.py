@@ -1,4 +1,7 @@
-import Image as img
+try:
+    import Image as img
+except ImportError:
+    import image as img
 
 from django.db import models
 from settings import MEDIA_ROOT
