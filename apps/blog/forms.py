@@ -25,7 +25,10 @@ class CommentForm(ModelForm):
 
     def clean_math(self):
         '''Verify that someone can do basic math'''
-        math = self.cleaned_data['math']
+        try:
+            math = int(self.cleaned_data['math'])
+        except ValueError:
+            raise forms.ValidationError(u"Math must be integer based")
         if int(math) != 7:
             raise forms.ValidationError(u'5 + 2 = 7')
 
