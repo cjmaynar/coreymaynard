@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{% block title %}{% endblock %}</title>
         <link rel="shortcut icon" href="/files/img/favicon.ico" />
-		<link rel="stylesheet" href="/files/css/base.css" media="screen" />
+        <link rel="stylesheet" href="{% static 'core/css/base.css' %}" media="screen" />
 		{% block specific_css %}{% endblock %}
-		<script type="text/javascript" src="/files/js/jquery-2.0.0.min.js"></script>
-		<script type="text/javascript" src="/files/js/main.js"></script>
+        <script type="text/javascript" src="{% static 'core/js/jquery-2.0.0.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'core/js/main.js' %}"></script>
 		{% block specific_js %}
 		{% endblock %}
 	</head>

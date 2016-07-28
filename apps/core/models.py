@@ -1,10 +1,12 @@
+''''
 try:
     import Image as img
 except ImportError:
     import image as img
+'''
 
 from django.db import models
-from settings import MEDIA_ROOT
+from django.conf import settings
 
 
 class ImageManager(models.Manager):
@@ -48,7 +50,7 @@ class Image(models.Model):
 
         image.thumbnail((height, width))
         image.save('%s/uploads/small/%s' % \
-                (MEDIA_ROOT, self.fullsize), 'JPEG', quality=80)
+                (settings.MEDIA_ROOT, self.fullsize), 'JPEG', quality=80)
 
         self.small = 'uploads/small/%s' % (filename)
 

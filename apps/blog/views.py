@@ -5,8 +5,8 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.template  import RequestContext
 from django.core.urlresolvers import reverse
 
-from blog.forms       import CommentForm
-from blog.models      import Post, Category
+from .forms       import CommentForm
+from .models      import Post, Category
 
 
 class LatestPosts(Feed):
@@ -63,7 +63,6 @@ def blog_index(request):
 
 def blog_detail(request, slug):
     '''View a specific post'''
-    from settings import MEDIA_URL
 
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.filter(approved=True)
@@ -78,7 +77,7 @@ def blog_detail(request, slug):
             else:
                 comment.admin_comment = False
                 comment.approved = False
-                
+
             comment.save()
             messages.success(request, 'Comment saved, awaiting approval')
 

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from portfolio.models import Project, Language
+
+from models import Project, Language
 
 
 class ProjectAdmin(admin.ModelAdmin):

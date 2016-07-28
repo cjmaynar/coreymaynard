@@ -1,8 +1,8 @@
 from django.conf.urls import patterns, url
 
-from blog.views import LatestPosts
+from .views import LatestPosts
 
-urlpatterns = patterns('blog.views',
+urlpatterns = patterns('apps.blog.views',
     url(r'^$', 'blog_index', name='blog_index'),
     url(r'^archives/$', 'blog_archives', name='blog_archives'),
     url(r'^archives/(?P<year>[0-9]{4})/$', 'blog_archives', \

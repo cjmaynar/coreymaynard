@@ -47,19 +47,19 @@ MIDDLEWARE_CLASSES = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'core.context_processors.recent_posts',
-    'core.context_processors.is_production',
-    'core.context_processors.categories',
+    'apps.core.context_processors.recent_posts',
+    'apps.core.context_processors.is_production',
+    'apps.core.context_processors.categories',
 )
 
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    DJANGO_ROOT +'/templates',
+    SITE_ROOT +'/templates',
 )
 
-STATICFILES_DIRS = (
-    DJANGO_ROOT + '/files',
+STATICFILES_DIRS = global_settings.STATICFILES_DIRS + (
+    SITE_ROOT,
 )
 
 # List of finder classes that know how to find static files in
@@ -78,9 +78,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     'django.contrib.messages',
-    'core',
-    'blog',
-    'portfolio',
+
+    'apps.core',
+    'apps.blog',
+    'apps.portfolio',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -88,11 +89,11 @@ INSTALLED_APPS = (
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-LOGGING = {                
+LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
-        'require_debug_false': {        
+        'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
@@ -105,15 +106,9 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],    
+            'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
         },
     }
 }
-
-
-try:
-    from local_settings import *
-except ImportError:
-    pass

@@ -1,12 +1,15 @@
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
+from django.db.models import Q
 from django.shortcuts import render_to_response
 from django.template  import RequestContext
-from blog.models      import Post
-from forms            import ContactForm
+
+from apps.blog.models import Post
+from apps.portfolio.models import Project
+from forms import ContactForm
 
 def index(request):
     '''The home page of the site'''
-    from portfolio.models import Project
     try:
         project = Project.objects.latest()
     except ObjectDoesNotExist:
@@ -21,7 +24,6 @@ def contact(request):
         if form.is_valid():
             print request.POST
 
-            from django.core.mail import send_mail
 
             send_mail('Contact from coreymaynard.com', request.POST.get('message'), request.POST.get('your_email'), ['me@coreymaynard.com'])
             sent = True
@@ -44,7 +46,6 @@ def resume(request):
 
 def search(request):
     '''Search for a blog post.'''
-    from django.db.models import Q
     qstring = request.GET.get('q', '').strip()
 
     if qstring:

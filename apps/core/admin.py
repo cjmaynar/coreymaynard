@@ -1,5 +1,6 @@
 from django.contrib import admin
-from core.models    import Image
+
+from models import Image
 
 
 class ImageAdmin(admin.ModelAdmin):

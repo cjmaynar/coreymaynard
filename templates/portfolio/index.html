@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load markup %}
 {% load blogtags %}
+{% load static %}
 
 {% block title %}Portfolio{% endblock %}
 
 {% block specific_css %}
-<link rel="stylesheet" href="/files/css/portfolio.css" media="screen" />
+<link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}" media="screen" />
 {% endblock %}
 
 {% block content %}

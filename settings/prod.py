@@ -1,4 +1,5 @@
 '''Local settings file, modify to fit your server'''
+from .common import *
 
 DEBUG = True
 PRODUCTION = False
@@ -28,3 +29,5 @@ DATABASES = {
         'PORT': '',
         }
 }
+
+

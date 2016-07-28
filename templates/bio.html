@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}About Me{% endblock %}
 
@@ -6,7 +7,7 @@
 {% include 'blog/sidebar.html' %}
 
 <h2>All About Me</h2>
-<img src="{{MEDIA_URL}}img/cjmaynar.jpg" id="bio-image" alt="A photograph of Corey Maynard" title="Look, it's me!" />
+<img src="{% static 'img/cjmaynar.jpg' %}" id="bio-image" alt="A photograph of Corey Maynard" title="Look, it's me!" />
 
 <p>As expected, my name is Corey Maynard. I finished college at <a href="http://www.ucf.edu">University of Central Florida</a>, Orlando in 2010. After four years there, I earned a Bachelors of Arts in Digital Media, and a minor in Secure Computing and Networking (SCAN). I am now living in Baltimore, Maryland, and enjoying the new location.</p>
 
