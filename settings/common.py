@@ -10,7 +10,7 @@ SITE_NAME = basename(DJANGO_ROOT)
 path.append(DJANGO_ROOT)
 path.append(DJANGO_ROOT + '/apps')
 
-MEDIA_ROOT = normpath(join(DJANGO_ROOT, 'files'))
+MEDIA_ROOT = normpath(join(SITE_ROOT, 'files'))
 MEDIA_URL = '/files/'
 
 STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))

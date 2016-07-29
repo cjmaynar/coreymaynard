@@ -24,10 +24,10 @@
 {% if year %}
 I wrote {{archives.count}} post{{archives.count|pluralize:'s'}} in {{year}}.</p>
 {% else %}
-<p>I&rsquo;ve written {{archives.count}} post{{archives.count|pluralize:'s'}}, you can take a look through them all down below.</p>
+<p>I&rsquo;ve written {{object_list.count}} post{{object_list.count|pluralize:'s'}}, you can take a look through them all down below.</p>
 {% endif %}
 
-{% for post in archives %}
+{% for post in object_list %}
 {% if forloop.first %}
 <ol>
 {% endif %}

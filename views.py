@@ -1,59 +1,41 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
-from django.db.models import Q
 from django.shortcuts import render_to_response
 from django.template  import RequestContext
+from django.views.generic import TemplateView, FormView
 
 from apps.blog.models import Post
 from apps.portfolio.models import Project
 from forms import ContactForm
 
-def index(request):
-    '''The home page of the site'''
-    try:
-        project = Project.objects.latest()
-    except ObjectDoesNotExist:
-        project = {}
-    return render_to_response("index.html", context_instance=RequestContext(request, vars()))
+
+class HomeView(TemplateView):
+    template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        try:
+            context['project'] = Project.objects.latest()
+        except ObjectDoesNotExist:
+            pass
+
+        return context
 
 
-def contact(request):
-    '''Get in touch with me'''
-    if request.POST:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            print request.POST
+class ContactView(FormView):
+    template_name = 'contact.html'
+    form_class = ContactForm
+
+    def form_valid(self, form):
+        send_mail('Contact from coreymaynard.com', request.POST.get('message'), request.POST.get('your_email'), ['me@coreymaynard.com'])
+        return super(ContactView, self).form_valid(form)
 
 
-            send_mail('Contact from coreymaynard.com', request.POST.get('message'), request.POST.get('your_email'), ['me@coreymaynard.com'])
-            sent = True
-    else:
-        form = ContactForm()
-    return render_to_response("contact.html", context_instance=RequestContext(request, vars()))
-
-
-def bio(request):
+class BioView(TemplateView):
     '''My Bio'''
-    is_bio = True
-
-    return render_to_response("bio.html", context_instance=RequestContext(request, vars()))
+    template_name = 'bio.html'
 
 
-def resume(request):
+class ResumeView(TemplateView):
     '''The resume page'''
-    return render_to_response("resume.html", context_instance=RequestContext(request, vars()))
-
-
-def search(request):
-    '''Search for a blog post.'''
-    qstring = request.GET.get('q', '').strip()
-
-    if qstring:
-        searched = True
-        results  = Post.objects.filter(
-            Q(title__icontains=qstring) | Q(body__icontains=qstring)
-        )
-    else:
-        searched = False
-
-    return render_to_response("search.html", context_instance=RequestContext(request, vars()))
+    template_name = 'resume.html'

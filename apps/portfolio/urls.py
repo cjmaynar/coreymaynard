@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, url
 
+from .views import PortfolioList, PortfolioDetail
+
 urlpatterns = patterns('apps.portfolio.views',
-    url(r'^$', 'portfolio_index', name='portfolio_index'),
-    url(r'^(?P<slug>[-\w]+)/$', 'portfolio_detail', name='portfolio_detail'),
+    url(r'^$', PortfolioList.as_view(), name='portfolio_index'),
+    url(r'^(?P<slug>[-\w]+)/$', PortfolioDetail.as_view(), name='portfolio_detail'),
 )

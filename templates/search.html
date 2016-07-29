@@ -4,10 +4,11 @@
 
 {% block content %}
 {% include 'blog/sidebar.html' %}
-{% if searched %}
+{% if query %}
 	<h2>Results</h2>
-	<p>Your search for <strong>{{qstring}}</strong> returned {{results.count}} result{{results.count|pluralize}}.</p>
-	{% for result in results %}
+	<p>Your search for <strong>{{query}}</strong> returned {{object_list.count}} result{{object_list.count|pluralize}}.</p>
+
+	{% for result in object_list %}
 	{% if forloop.first %}
 	<ol>
 	{% endif %}
@@ -16,7 +17,7 @@
 	</ol>
 	{% endif %}
 	{% empty %}
-	<p>Your search for <strong>{{qstring}}</strong> returned no results.</p>
+	<p>Your search for <strong>{{query}}</strong> returned no results.</p>
 	<h3>Try Again?</h3>
 	{% include 'search_form.html' %}
 	{% endfor %}

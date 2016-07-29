@@ -6,8 +6,8 @@
     <h2>Categories</h2>
 
     {% if category %}
-    <p>There {{ posts.count|pluralize:"is,are" }} {{ posts.count }} post{{ posts.count|pluralize }} in the <strong>{{ category }}</strong> category:</p>
-        {% for post in posts %}
+    <p>There {{ object_list.count|pluralize:"is,are" }} {{ object_list.count }} post{{ object_list.count|pluralize }} in the <strong>{{ category }}</strong> category:</p>
+        {% for post in object_list %}
         {% if forloop.first %}
         <ol>
         {% endif %}
@@ -19,8 +19,8 @@
         <p>There are no posts in this category.</p>
         {% endfor %}
     {% else %}
-        <p>There are a total of {{ categories.count }} categories:</p>
-        {% for category in categories %}
+        <p>There are a total of {{ object_list.count }} categories:</p>
+        {% for category in object_list %}
         {% if forloop.first %}
         <ol>
         {% endif %}

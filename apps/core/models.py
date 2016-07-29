@@ -1,9 +1,4 @@
-''''
-try:
-    import Image as img
-except ImportError:
-    import image as img
-'''
+from PIL import Image as img
 
 from django.db import models
 from django.conf import settings

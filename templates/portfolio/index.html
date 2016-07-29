@@ -13,7 +13,7 @@
 {% include 'blog/sidebar.html' %}
 
 <div class="projects">
-{% for project in projects %}
+{% for project in object_list %}
     <div class="project">
         <h2><a href="{% url 'portfolio_detail' project.slug %}">{{project.title}}</a></h2>
         <a href="{% url 'portfolio_detail' project.slug %}"><img src="{{MEDIA_URL}}{{project.primary.small}}" class="primary" /></a>

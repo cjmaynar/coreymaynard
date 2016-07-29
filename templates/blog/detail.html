@@ -3,7 +3,7 @@
 {% load static %}
 
 
-{% block title %}{{post.title}}{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block specific_css %}
 <link rel="stylesheet" href="{% static 'blog/js/fancybox/jquery.fancybox.css' %}" media="screen" />
@@ -17,23 +17,30 @@
 
 {% block content %}
 {% include "blog/sidebar.html" %}
+
 <div id="post">
-	<h2>{{post.title}}</h2>
+	<h2>{{ post.title }}</h2>
 	{% with post.date as publish %}
-	<p id="post-date"><strong>{{publish|date:"j"}}</strong>, {{publish|date:"M Y"}}</p>
+	<p id="post-date"><strong>{{ publish|date:"j" }}</strong>, {{ publish|date:"M Y" }}</p>
 	{% endwith %}
+
 	{% if post.image %}
 		<div id="images">
-			<a href="{{MEDIA_URL}}{{post.image.location}}" rel="lightbox"><img src="{{MEDIA_URL}}{{post.image.location}}" alt="{{post.image.title}}" /></a>
+			<a href="{{ MEDIA_URL }}{{ post.image.location }}" rel="lightbox"><img src="{{ MEDIA_URL }}{{ post.image.location }}" alt="{{ post.image.title }}" /></a>
 			{% if post.image.desc %}
-			<p>{{post.image.desc}}
+			<p>{{ post.image.desc }}
 			{% endif %}
 		</div>
 	{% endif %}
+
     <div id="contents">
-    <strong>Contents</strong>
+        <strong>Contents</strong>
     </div>
-	{{post.body|markdown}}
+
+	{{ post.body|markdown }}
+
+    {% comment %}
 	{% include "blog/comments.html" %}
+    {% endcomment %}
 </div>
 {% endblock %}

@@ -1,12 +1,9 @@
 from django.contrib.syndication.views import Feed
-from django.contrib   import messages
-from django.http      import HttpResponseNotFound
-from django.shortcuts import render_to_response, get_object_or_404
-from django.template  import RequestContext
 from django.core.urlresolvers import reverse
+from django.db.models import Q
+from django.views.generic import ListView, DetailView
 
-from .forms       import CommentForm
-from .models      import Post, Category
+from .models import Post, Category
 
 
 class LatestPosts(Feed):
@@ -27,87 +24,78 @@ class LatestPosts(Feed):
         return reverse('blog_detail', args=[item.slug])
 
 
-def render_response(request, *args, **kwargs):
-    '''Custom render_to_response wrapper to contain the blog_processor
-    function'''
-    kwargs['context_instance'] = RequestContext(request,
-        processors=(blog_processor,)
-    )
+class PostList(ListView):
+    template_name = 'blog/index.html'
 
-    return render_to_response(*args, **kwargs)
+    def get_queryset(self):
+        return Post.objects.filter(published=True)[:10]
 
 
-def blog_processor(request):
-    '''Add some extra stuff on every page'''
-    posts = Post.objects.exclude(published=None)
-    years = []
-
-    for post in posts:
-        years.append(post.date.year)
-
-    years = sorted(set(years), reverse=True)
-
-    return {
-        'years': years,
-    }
+class PostDetail(DetailView):
+    template_name = 'blog/detail.html'
+    model = Post
 
 
-def blog_index(request):
-    '''The landing page of the blog'''
-    try:
-        posts = Post.objects.filter(published=True)[:10]
-        return render_response(request, "blog/index.html", vars())
-    except:
-        return HttpResponseNotFound()
+class PostArchives(ListView):
+    template_name = 'blog/archives.html'
 
+    def dispatch(self, request, *args, **kwargs):
+        self.year = kwargs.get('year')
+        return super(PostArchives, self).dispatch(request, *args, **kwargs)
 
-def blog_detail(request, slug):
-    '''View a specific post'''
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostArchives, self).get_context_data(*args, **kwargs)
+        context.update({
+            'year': self.year,
+            'years': sorted(set(
+                [post.date.year for post in Post.objects.exclude(published=None)]
+            ), reverse=True)
+        })
+        return context
 
-    post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.filter(approved=True)
-
-    if request.POST:
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            if request.user.is_authenticated():
-                comment.admin_comment = True
-                comment.approved = True
-            else:
-                comment.admin_comment = False
-                comment.approved = False
-
-            comment.save()
-            messages.success(request, 'Comment saved, awaiting approval')
-
+    def get_queryset(self):
+        if self.year:
+            return Post.objects.filter(published=True).filter(date__year=self.year)
         else:
-            messages.error(request, 'Invalid form, please check and resubmit')
-            #Got to do something here to scroll down to the form on error
-            for error in form.errors:
-                print error
-    else:
-        form = CommentForm(initial={'post': post.id})
-
-    return render_response(request, "blog/detail.html", vars())
+            return Post.objects.filter(published=True).order_by('-date')
 
 
-def blog_archives(request, year=None):
-    '''A collection of all the posts that have been made'''
-    if year:
-        archives = Post.objects.filter(published=True).filter(date__year=year)
-    else:
-        archives = Post.objects.filter(published=True).order_by('-date')
-
-    return render_response(request, "blog/archives.html", vars())
-
-
-def blog_categories(request, category=None):
+class PostCategories(ListView):
     '''Posts fall into a category, this allows refinement around a topic'''
-    if category:
-        posts = Post.objects.filter(published=True) \
-                .filter(categories__name=category)
-    else:
-        categories = Category.objects.all()
+    template_name = 'blog/categories.html'
 
-    return render_response(request, "blog/categories.html", vars())
+    def dispatch(self, request, *args, **kwargs):
+        self.category = kwargs.get('category')
+        return super(PostCategories, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostCategories, self).get_context_data(*args, **kwargs)
+        context['category'] = self.category
+        return context
+
+    def get_queryset(self):
+        if self.category:
+            return Post.objects.filter(published=True).filter(categories__name=self.category)
+        else:
+            return Category.objects.all()
+
+
+class SearchView(ListView):
+    template_name = 'search.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        self.query = request.GET.get('q')
+        return super(SearchView, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(SearchView, self).get_context_data(*args, **kwargs)
+        context['query'] = self.query
+        return context
+
+    def get_queryset(self):
+        if self.query:
+            return Post.objects.filter(
+                Q(title__icontains=self.query) | Q(body__icontains=self.query)
+            )
+        else:
+            return []

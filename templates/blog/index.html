@@ -7,7 +7,7 @@
 {% block content %}
 {% include 'blog/sidebar.html' %}
 <div id="list-posts">
-	{% for post in posts %}
+	{% for post in object_list %}
         <div class="post">
         <h2 class="post-title"><a href="{% url 'blog_detail' post.slug %}">{{post.title}}</a></h2>
         <ul class="info">
