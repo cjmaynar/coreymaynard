@@ -15,10 +15,10 @@ def confirm(warning=None):
                     continue
             else:
                 if response in ('yes', 'y'):
-                    #continue with setup
+                    # continue with setup
                     return True
                 else:
-                    #cancel setup
+                    # cancel setup
                     break
 
     return False
@@ -55,14 +55,12 @@ class Command(NoArgsCommand):
                 syncdb.Command().handle_noargs(interactive=False)
 
                 if 'django.contrib.auth' in settings.INSTALLED_APPS:
-                    #Only add superuser if auth is installed
+                    # Only add superuser if auth is installed
                     print 'Adding Superuser...'
-                    from django.contrib.auth.management.commands \
-                            import createsuperuser
+                    from django.contrib.auth.management.commands import createsuperuser
                     from django.core.management import call_command
 
-                    call_command('createsuperuser', interactive=True, \
-                            username=settings.USER_NAME, email=settings.EMAIL)
+                    call_command('createsuperuser', interactive=True, username=settings.USER_NAME, email=settings.EMAIL)
 
                 print
                 print 'Database setup complete.'

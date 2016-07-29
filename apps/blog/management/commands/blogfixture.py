@@ -13,20 +13,20 @@ class Command(BaseCommand):
 
         for i in range(0, 10):
             post = Post(
-                slug = 'post_url' + str(i),
-                title = 'Test Post',
-                author = user,
-                status = True,
-                body = 'Test Content',
+                slug='post_url' + str(i),
+                title='Test Post',
+                author=user,
+                status=True,
+                body='Test Content',
             )
             post.save()
 
             comment = Comment(
-                post = post,
-                author = 'John Doe',
-                author_url = 'http://www.johndoe.com',
-                author_email = 'john@doe.com',
-                comment = 'Generic comment %s' % (i),
+                post=post,
+                author='John Doe',
+                author_url='http://www.johndoe.com',
+                author_email='john@doe.com',
+                comment='Generic comment %s' % (i),
             )
             comment.save()
         print 'Content added'

@@ -6,8 +6,8 @@ from .models import Comment
 
 
 class CommentForm(ModelForm):
-    post = forms.ModelChoiceField(queryset=Post.objects.all(), \
-            widget=forms.HiddenInput())
+    post = forms.ModelChoiceField(queryset=Post.objects.all(),
+                                  widget=forms.HiddenInput())
     author = forms.CharField(label="Your Name")
     author_url = forms.CharField(label="Your Website", required=False)
     author_email = forms.CharField(label="Your Email", required=False)

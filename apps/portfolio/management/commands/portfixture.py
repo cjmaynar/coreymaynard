@@ -16,7 +16,7 @@ class Command(BaseCommand):
             'JavaScript/jQuery',
         )
 
-        #Build Technologies
+        # Build Technologies
         print "Adding languages..."
         for lang in languages:
             l = Language()

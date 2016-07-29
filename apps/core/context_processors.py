@@ -3,10 +3,12 @@ from django.db.models import Count
 
 from apps.blog.models import Post, Category
 
+
 def recent_posts(request):
     '''Get 5 most recent posts from database'''
     recent = Post.objects.filter(published=True).order_by('-date')[:5]
     return {'recent': recent}
+
 
 def categories(request):
     '''Get the categories'''

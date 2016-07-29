@@ -30,9 +30,6 @@ USE_I18N = False
 
 ALLOWED_HOSTS = '*'
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'nlz-#l7of9rd5n54sc00+rn3lb@&d#0g)_a_z=izyy_wlcko^e'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -55,7 +52,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
-    SITE_ROOT +'/templates',
+    SITE_ROOT + '/templates',
 )
 
 STATICFILES_DIRS = global_settings.STATICFILES_DIRS + (
