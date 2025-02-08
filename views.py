@@ -3,7 +3,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.mail import send_mail
 from django.views.generic import TemplateView, FormView
 
-from apps.portfolio.models import Project
+from portfolio.models import Project
 from forms import ContactForm
 
 

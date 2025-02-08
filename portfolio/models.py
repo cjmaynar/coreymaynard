@@ -13,7 +13,7 @@ class Project(models.Model):
     short_lead = models.CharField(max_length=200)
     languages = models.ManyToManyField('Language', related_name="used_in")
     images = models.ManyToManyField('core.image', related_name='projects')
-    primary = models.ForeignKey('core.image', related_name='primary')
+    primary = models.ForeignKey('core.image', related_name='primary', on_delete=models.CASCADE)
 
     def save(self):
         from django.template.defaultfilters import slugify

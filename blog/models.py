@@ -11,7 +11,7 @@ class Post(models.Model):
     lead = models.TextField()
     allow_comments = models.BooleanField(default=True)
     categories = models.ManyToManyField('Category', related_name="posts", blank=True)
-    image = models.ForeignKey('core.Image', related_name='post', blank=True, null=True)
+    image = models.ForeignKey('core.Image', related_name='post', blank=True, null=True, on_delete=models.CASCADE)
 
     def save(self):
         from django.template.defaultfilters import slugify
@@ -44,7 +44,7 @@ class CommentManager(models.Manager):
 
 class Comment(models.Model):
     '''Have something to say about a post? Say it here'''
-    post = models.ForeignKey(Post, related_name='comments')
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     author = models.CharField(max_length=255)
     author_url = models.URLField(blank=True, null=True)

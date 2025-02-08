@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load markup %}
+{% load markup_tags %}
 {% load blogtags %}
 
 {% block title %}Blog{% endblock %}
@@ -27,7 +27,7 @@
         <p class="comments"><a href="{% url 'blog_detail' post.slug %}#comments">{{post.comments.approved_only.count}} Comment{{post.comments.approved_only.count|pluralize}}</a></p>
         {% endif %}
         <div class="teaser">
-        {{post.body|make_lead|markdown}}
+        {{post.body|make_lead|apply_markup:"markdown"}}
         <p><a class="button" href="{% url 'blog_detail' post.slug %}">Read More</a></p>
         </div>
         </div>

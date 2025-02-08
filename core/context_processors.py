@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.db.models import Count
 
-from apps.blog.models import Post, Category
+from blog.models import Post, Category
 
 
 def recent_posts(request):

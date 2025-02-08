@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load markup %}
+{% load markup_tags %}
 
 {% block title %}Home Page{% endblock %}
 
@@ -17,7 +17,7 @@
         {% if recent %}
         <div id="in-which">
             <h3>Recently, I&rsquo;ve Been Thinking About <a href="{% url 'blog_detail' recent.0.slug %}">{{recent.0.title}},</a></h3>
-            {{recent.0.lead|markdown}}
+            {{recent.0.lead|apply_markup:"markdown"}}
         </div>
         {% endif %}
 
