@@ -20,7 +20,7 @@ class Project(models.Model):
         self.slug = slugify(self.title)
         super(Project, self).save()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
@@ -31,5 +31,5 @@ class Project(models.Model):
 class Language(models.Model):
     name = models.CharField(max_length=200)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name

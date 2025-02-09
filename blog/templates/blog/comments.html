@@ -10,7 +10,7 @@
     <strong>{{ comment.author }}</strong>
     {% endif %}
     said on {{comment.date|date:"M j, Y"}}:</p>
-	{{comment.comment|markdown}}
+	{{comment.comment|apply_markup:"markdown"}}
 </div>
 {% empty %}
 <p>This space intentionally left blank.</p>

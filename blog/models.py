@@ -63,5 +63,5 @@ class Category(models.Model):
     '''What category does a post belong in? Pick it here'''
     name = models.CharField(max_length=255)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name

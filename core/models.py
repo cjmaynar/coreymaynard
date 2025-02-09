@@ -44,11 +44,12 @@ class Image(models.Model):
             width = width / 2
 
         image.thumbnail((height, width))
+        image = image.convert("RGB")
         image.save('%s/uploads/small/%s' % (settings.MEDIA_ROOT, self.fullsize), 'JPEG', quality=80)
 
         self.small = 'uploads/small/%s' % (filename)
 
         super(Image, self).save()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title

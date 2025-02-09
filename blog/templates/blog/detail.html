@@ -26,7 +26,7 @@
 
 	{% if post.image %}
 		<div id="images">
-			<a href="{{ MEDIA_URL }}{{ post.image.location }}" rel="lightbox"><img src="{{ MEDIA_URL }}{{ post.image.location }}" alt="{{ post.image.title }}" /></a>
+			<a href="{{ MEDIA_URL }}{{ post.image.fullsize.name }}" rel="lightbox"><img src="{{ MEDIA_URL }}{{ post.image.fullsize.name }}" alt="{{ post.image.title }}" /></a>
 			{% if post.image.desc %}
 			<p>{{ post.image.desc }}
 			{% endif %}
@@ -37,7 +37,7 @@
         <strong>Contents</strong>
     </div>
 
-	{{ post.body|markdown }}
+	{{ post.body|apply_markup:"markdown" }}
 
     {% comment %}
 	{% include "blog/comments.html" %}
