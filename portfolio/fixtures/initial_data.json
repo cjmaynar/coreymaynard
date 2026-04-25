@@ -1,0 +1,247 @@
+[
+  {
+    "model": "portfolio.language",
+    "pk": 1,
+    "fields": {
+      "name": "PHP"
+    }
+  },
+  {
+    "model": "portfolio.language",
+    "pk": 2,
+    "fields": {
+      "name": "MySQL"
+    }
+  },
+  {
+    "model": "portfolio.language",
+    "pk": 3,
+    "fields": {
+      "name": "(X)HTML"
+    }
+  },
+  {
+    "model": "portfolio.language",
+    "pk": 4,
+    "fields": {
+      "name": "CSS"
+    }
+  },
+  {
+    "model": "portfolio.language",
+    "pk": 5,
+    "fields": {
+      "name": "Python"
+    }
+  },
+  {
+    "model": "portfolio.language",
+    "pk": 6,
+    "fields": {
+      "name": "Django"
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 1,
+    "fields": {
+      "title": "Central Florida Rowing",
+      "slug": "central-florida-rowing",
+      "begun": "2007-06-25",
+      "completed": "2007-08-25",
+      "client": "Central Florida Rowing",
+      "public": false,
+      "url": null,
+      "description": "### And So It Began\r\n\r\nDeveloping this site was my real introduction to web design and development. Coming in with just limited experience with HTML and CSS, I knew that I wanted to push my boundaries. I set out with the high reaching goal of developing a dynamic website with a CMS, photo storage, an alumni list, and a stored history of races and results for the team to manage. I began teaching myself [PHP](http://php.net), one of the more common server side languages.\r\n\r\nWhile learning the language, I began creating several different mockup designs to show to the team board for approval. Once we settled on a design, it became time to start marking it up. Being not quite a master at HTML and CSS at this time (At least I knew not to use tables for layout), this was also a learning experience.\r\n\r\nAfter the basic markup was complete, it was time to start developing the server side of the site, the power house behind the presentation. This served as an excellent introduction to PHP/MySQL interaction, as I wrote all the queries and output by hand myself. Additionally, here I learned about the massive benefits of creating templates, and including them into the application, something that was not possible with a static site. Most of the logic and processing was done in page, but some things were abstracted out into a functions file which was included where needed to simplify matters.\r\n\r\nWhen everything was finished, I had developed a website that was compatible with all major browsers at the time, featured a fully functional administrator back end to allow team officers to post news, add photos, add races and results, and manage the alumni list. At the time, I was quite proud of it understandably, but now I just list it here for history&rsquo;s sake: a reminder of how far things have come since then.",
+      "short_lead": "web site for my college rowing team",
+      "primary": 1,
+      "images": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "languages": [
+        4,
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 3,
+    "fields": {
+      "title": "Techrangers@UCF",
+      "slug": "techrangersucf",
+      "begun": "2009-05-06",
+      "completed": "2009-09-12",
+      "client": "Techrangers@UCF",
+      "public": true,
+      "url": "http://techrangers.cdl.ucf.edu/",
+      "description": "One of the first large projects that I worked on while at the [Techrangers](http://techrangers.cdws.ucf.edu), I wrote the code to power the new team website. I had the privilege of working with [Chet Bortz](http://chetbortz.com) who created the entire design for the site. He&rsquo;s got an excellent eye for design.\r\n\r\n### Working with WordPress\r\n\r\nThe new Techrangers site was the first of a push to using [Wordpress](http://wordpress.org) as a CMS for forward facing websites for some of the university&rsquo;s projects. This was my first time working with Wordpress, and I found it a pleasure to work in. Wordpress theming is done by creating template files that can be reused, or be unique for each page. Also, it is common to move much of the functionality out into a separate functions file.\r\n\r\nWordpress has been made to make it as easy as possible to hook into the system from your custom theme. Nearly everything you can imagine yourself needing is only a function call away. My only complaint (and it&rsquo;s not really a complaint) about it is that there is so much available that it can easily become overwhelming. Luckily though, there is a rather good documentation system out there for reference: the [Wordpress Codex](http://codex.wordpress.org). From here you can find out anything you need to know.\r\n\r\n### Other Points of Interest\r\n\r\nThis was also the first time that I had worked on a project where my code was going to be passed on to other people to maintain and continue to develop, so it was an interesting experience for me to make sure that all the code I produced was clean, documented and sensible (not to say that I hadn&rsquo;t done this in other work, but here it there was some extra reason to make doubly sure.) Additionally, this was the first time that I worked with [Subversion](http://subversion.tigris.org) - a centralized version control system that tracks any and all changes to the code.\r\n",
+      "short_lead": "web site for the Techrangers@UCF",
+      "primary": 12,
+      "images": [
+        17,
+        16,
+        15,
+        14,
+        13,
+        12
+      ],
+      "languages": [
+        4,
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 2,
+    "fields": {
+      "title": "Portfolio V3",
+      "slug": "portfolio-v3",
+      "begun": "2008-10-11",
+      "completed": "2008-11-05",
+      "client": "Personal",
+      "public": false,
+      "url": null,
+      "description": "\r\n### Intermission\r\n\r\nBetween the development of the first Crew website, and the creation of this, I had done a lot of work teaching myself more about the web, HTML, CSS, and PHP. However, I had produced no real work of note.\r\n\r\n### The Previous Incarnation of this Site\r\n\r\nPrior to this redesign, coreymaynard.com featured a very simply created PHP site to manage my portfolio. I quickly grew tired of it, and felt that I needed a new and improved website. I also felt like starting a blog, as I had just been introduced to [Fedora](http://fedoraproject.com) Linux, and was learning a lot about the OS as I was finding my way around. It seemed like an excellent idea to not only share my knowledge with anyone else who may be interested, but to compile it somewhere so that I could use it as a reference at a later date myself.\r\n\r\n### It&rsquo;s Replacement\r\n\r\n#### Design\r\n\r\nI&rsquo;ve never considered myself to be an excellent designer, I&rsquo;m not good at creating designs full of shiny bells and whistles, or creating beautifully done buttons that you just have to click (I&rsquo;ll leave that to someone else, say [Chet Bortz](http://chetbortz.com) for example. More on him later). Therefore, I decided that I would be best served by a minimal and simple layout. After going through quite a few different comps in Photoshop, I finally picked one.\r\n\r\nI think it gracefully presents my material, providing a clean backdrop for the content to be displayed upon. With graceful gradients on the header and footer, a nice frame is formed around the core of the web site: the content.\r\n\r\n#### Development\r\n\r\nI started work on this new version of my portfolio shortly after I began working with the [Techrangers](http://techrangers.cdws.ucf.edu) at Course Development &amp; Web Services (now Center for Distributed Learning). There I learned much about the way of the semantics aware developer. At the university level, it is highly important for a web site to be [accessible](http://www.w3.org/standards/webdesign/accessibility), as they have to support students with disabilities. Of most import for web development is support users with vision problems. This means everything from color blindness, to true blindness.\r\n\r\nAs I said, since creating the Crew site, I&rsquo;d learned a lot more about web technologies, both PHP and JavaScript/jQuery. I got to utilize that new knowledge here. Primarily, I had discovered [Object Oriented Programming (OOP)](http://en.wikipedia.org/wiki/Object-oriented_programming) in PHP, and decided that it was an excellent idea. So, I built the site to be entirely object oriented. This made the core pages of the site much simpler, and moved almost all of the actual computing and processing out into the classes. I feel that this made the code much easier to maintain, and encouraged code reuse throughout the project.\r\n\r\nAdditionally, here I began experimenting with the JavaScript framework [jQuery](http://jquery.com). I&rsquo; definitely become a convert of it. jQuery is indeed a &ldquo;Write Less, Do More&rdquo; library. It helps make what had before been impossible to do reliably in a browser with JavaScript.",
+      "short_lead": "new version of my personal portfolio site",
+      "primary": 7,
+      "images": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "languages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 4,
+    "fields": {
+      "title": "Central Florida Rowing v2",
+      "slug": "central-florida-rowing-v2",
+      "begun": "2009-08-10",
+      "completed": "2009-10-20",
+      "client": "Central Florida Rowing",
+      "public": false,
+      "url": "http://centralfloridarowing.com/",
+      "description": "It had been two years since I&rsquo;d done anything with the Central Florida Rowing web site, and I felt that it was due for a serious rework. Especially since it had been created when I was just starting to learn my way around PHP, and I now had a much greater knowledge base.\r\n\r\n### Design Work\r\n\r\nI knew that a complete redesign was necessary. On the old version, the navigation bar was way too large, there where far too many links available. I knew that I needed to find some way of simplifying that, but still keeping many of those pages. Also, the old site&rsquo;s layout felt very random. There was no system in the placement of objects and text, I was sure that I could do better now.\r\n\r\nSo, I began working on a new design. This time, using a grid system; to be specific, the 960 grid. Using a grid provides an excellent way of structuring a page layout in an orderly fashion. It ensures that every object is placed in rhythm with it&rsquo;s surrounding objects, and that the entire layout flows together. My solution to the overflowing navigation menu was to strip out all but the most important pages from it, and use those as the main navigation. All the remaining pages were created as a sub page of one of the primary level navigation links. This served it&rsquo; purpose excellently and significantly simplified the design of the site.\r\n\r\nThe color choices seemed fitting - black and gold being University of Central Florida&rsquo;s official colors. I found no reason to go about changing those.\r\n\r\n### Development\r\n\r\nOn this site I poured in the knowledge that I&rsquo;d gained from all the other previous work I&rsquo;d done. Like my portfolio at the time, it was Object Oriented, but even this was cleaner and less forced now that it was when I developed my portfolio.\r\n\r\nI was greatly influenced by WordPress when developing this site. I created a dashboard similar to Wordpress&rsuo; and wrote my own templating system to handle custom pages. Also, since I knew that I needed subpages, I wrote my own inheritance system for the pages as well that decides how to place a page.",
+      "short_lead": "a new and improved version of Central Florida Rowing",
+      "primary": 20,
+      "images": [
+        24,
+        23,
+        22,
+        21,
+        20,
+        19,
+        18
+      ],
+      "languages": [
+        4,
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 5,
+    "fields": {
+      "title": "To Be Done 3 (TBD3)",
+      "slug": "to-be-done-3-tbd3",
+      "begun": "2010-02-09",
+      "completed": "2010-05-20",
+      "client": "Center for Distributed Learning - CDL @ UCF",
+      "public": false,
+      "url": null,
+      "description": "\r\n### About the Project\r\n\r\nTo Be Done 3 (TBD3) is the next iteration of the Techrangers&rsquo; internally based work flow system. The primary function of the Techrangers team is to take Microsoft Word documents developed by university instructors for their online courses, and convert them into semantic and accessible XHTML documents. To do this, the team had created TBD some time ago, and then later released TBD2. This application is used as a tool for the team and other teams in the department to manage requests for document conversion. \r\n\r\nFor TBD3 we wanted to make things as easy as possible for everyone involved, so large amounts of effort went into reworking the process of how requests are created and assigned to people. Also we worked to integrate time tracking of work performed on every request, and integration with another system produced with the help of [Advanced Systems](http://advsys.cdws.ucf.edu) that manages every single student, professor and class at the University of Central Florida.\r\n\r\n### Designing TBD3\r\n\r\nAgain, [Chet Bortz](http://chetbortz.com) worked as the primary designer for TBD3, producing an awesome layout for us to implement. I can not give him enough praise for this design. Later his work was continued by several other members of the team.\r\n\r\n### Developing TBD3\r\n\r\nJust prior to beginning this project, the Techrangers team had begun to move away from PHP, and instead began using [Django](http://djangoproject.com). Django is a Python based MVC (Model, View, Controller - though for Django it is actually a MVT: Model, View, Template) web framework. In any event, I&rsquo;d had little opportunity to learn either Python or any bit of the Django framework before development began. Again, I seem to enjoy learning under fire. After a slow start, things finally clicked, and then began taking off.\r\n\r\nShortly into the development process, I became the senior developer on the team, and had to start managing the other 4 people working on the project with me. None of them were as knowledgeable as me about programming in general, or the Django framework itself, so I had to help teach them, and assign them tasks suitable to their skill levels. At times when it was important that they learn a concept we would work at [Pair Programming](http://en.wikipedia.org/wiki/Pair_programming). This is a pretty effective technique of sharing knowledge between a knowledgeable programmer and one learning. It also is excellent when working with two skilled programmers, as serves as an excellent way of bouncing ideas of each other.\r\n\r\nEven while managing the rest of the team working on the project, I was responsible for developing the major features and writing all the more complex code to handle AJAX requests, dealing with any bugs that may appear, and all the other details needed to make the progress on development.\r\n\r\n### Thoughts on Python and Django\r\n\r\nAfter working on this project, I feel that Python itself is a much improved language over PHP. It seems much cleaner, sensible, and more powerful. Additionally, the Django framework is powerful, customizable, extendible, and doesn&rsquo;t get in the way. It definitely reduces the amount of code that needs to be written to get basic functionality, and being that it follows the MVT development process, the code is sensibly separated and it becomes easy to find what you are looking for.",
+      "short_lead": "internal application for request management and student support",
+      "primary": 25,
+      "images": [
+        31,
+        30,
+        29,
+        28,
+        27,
+        26,
+        25
+      ],
+      "languages": [
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 6,
+    "fields": {
+      "title": "Mount Vernon Urbanites",
+      "slug": "mount-vernon-urbanites",
+      "begun": "2013-08-15",
+      "completed": "2013-03-10",
+      "client": "Mt. Vernon Urbanites",
+      "public": true,
+      "url": "http://mvurbanites.com/",
+      "description": "The Mount Vernon Urbanites is a social organization for young professionals who live or work in the neighborhoods of Mount Vernon & Midtown-Belvedere in Baltimore, Maryland\r\n\r\nI volunteered to design and develop a web site for the organization shortly after its formation. Working with a committee of members we discussed the intended purpose that the website would serve, decided on sections and content, and then picked a final design that I developed.\r\n\r\n### Design Thoughts\r\n\r\nThis project was my introduction to [Twitter Bootstrap](http://getbootstrap.com/) - an excellent front-end framework that allows for quickly developed strong code. Additionally it provides built in support for responsive design - the process of creating one design that changes depending on the device's screen size that it is accessed through. The intention of this is to create a consistent layout throughout the different devices with as little effort as possible. Bootstrap fills this need excellently!\r\n\r\n### Developing MVU\r\n\r\nThe MVU web site is written in [Django 1.5](https://www.djangoproject.com/). I've used Django in several of my other projects, and it is a favorite of mine. I ended up writing a basic implementation of [Django CMS](https://www.django-cms.org/en/) to run the application. With that in mind, each Page is composed of multiple Components, where a Component is either a Text or Image. These components are added dynamically through the Django Admin, and can be in any order. This allows the user to build a page of text and images in any flow and placement. Additionally, each Page has a Parent which ties to another Page object, allowing for a hierarchical structure to be created. Finally, each page has a Template as well, allowing for custom HTML and JavaScript to be placed on specific pages.\r\n\r\nThe code base for MVU is available on my GitHub account at [https://github.com/cjmaynar/mv-urbanites](https://github.com/cjmaynar/mv-urbanites)",
+      "short_lead": "neighborhood social organization",
+      "primary": 1,
+      "images": [
+        1
+      ],
+      "languages": [
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 7,
+    "fields": {
+      "title": "Cyber Situational Awareness",
+      "slug": "cyber-situational-awareness",
+      "begun": "2010-06-30",
+      "completed": "2013-07-13",
+      "client": "Northrop Grumman",
+      "public": false,
+      "url": null,
+      "description": "### What is Cyber Situational Awareness?\r\n\r\nCyber Situational Awareness (CSA) is exactly what standard situational awareness would be, except for in the Cyber world. Having an accurate understanding of the situation at hand is crucial to make important decisions in real time, and in cyber warfare that knowledge is just as important as in real world battlefield situations. The idea of CSA is for a analyst or commander to be able to quickly understand the events that are happening on their network, allowing them to make the necessary decisions to react correctly.\r\n\r\n#### The Standard Approach\r\n\r\nMany existing tools that attempt to provide Cyber Situational Awareness use geospatial information to map IP addresses on a geographical map; however this is a very weak way to present information though for several reasons:\r\n\r\n1. Geospatial look-ups of IP addresses just aren't that accurate, often times being off by several miles or more.\r\n2. The knowledge gained by placing the IP address on the map by physical location does not communicate any functional or particularly useful information to the analyst.\r\n3. This approach is limited to publicly facing IP addresses - if you need to find out any information about a private IP space you'll have to provide your own look-up locations.\r\n\r\nThere are other significant flaws in limiting oneself to this approach, yet the basic premise of mapping cyber space holds promise.\r\n\r\n#### What We Change\r\n\r\nWith CSA we've provided an improved solution to this problem. By taking advantage of the ease of understanding that comes with maps, but removing all the geospatial information and replacing it with more relevant data, we can create functional and relevant visualizations of computer networks. Our approach to scalable IP-space visualization is based on organizing the one-dimensional IP-space into hierarchical tiers represented as a two-dimensional space or map. Using tiling, layers, and zoom/pan capabilities the tool allows for analysts to move about this custom generated map of the network. These maps can be generated out of any type of network using whatever hierarchy fits for the mission at hand, allowing for fully realized mappings of private networks.\r\n\r\nScalability is also a prime area of interest with this application, therefore using commercial data we have run the entire IPv4 space through our mapping algorithm to create a map of the entire internet - coming in at around 4 billion unique IP addresses. On the opposite side of that, the application also must be able to cleanly display much smaller customer networks, so we have developed algorithms to ensure that the visualization looks just as good when working with a network of a few hundred IPs as a few billion.\r\n\r\n### Early Development\r\n\r\nWhen I joined the CSA team, the project had already been running for a year, during that time a lot of things had changed from the original vision, and the new goal was to move to a web based application instead of the Java thick client that it had been written in. One of the first things that I did was implement a SVN requirement, and spin up a development server for the team to work on - as prior to that they had done all their editing on one single production server copy without any versioning system. Once a basic sense of order had been obtained, I set myself to porting the core of the application. At that point CSA was split between PHP and Java - I refactored all of the Java code into PHP, creating a drastic speed up in database search time as well as a consistent codebase.\r\n\r\n### CSA Matures\r\n\r\nOnce I'd restored base functionality to the application after completing the port - and thus gained a through understanding of the project, I then began work on a second refactoring to move the code base to PHP5 classes. The reason for doing this move was to create a more structured code base by implementing a dynamic model based system for easy extension: the first step in developing a framework. While creating these models I also implemented full unit tests on them, providing a quick way to ensure no regressions enter the application.\r\n\r\nWhen I joined the team, the application had no understanding of users and permissions. Using my new models I was able to quickly build a User and Group based permission system allowing for administrators to add and remove users from groups, grant access to specific maps to groups, and for users to share their custom uploaded files with other members of their group.\r\n\r\nTo speed up the loading of user uploaded files into the visualization, I created a background process that generates cached versions of every file the user uploads into CSA to allow for near instant rendering of the points onto a map. CSA also needed to handle dynamic data sources as well, so I developed a generic feed reader that is easy to extend to add additional data formats; currently CSA is able to obtain and process and display data on the maps through Network Links (polling of remote files) or through JMS services.\r\n\r\nBecause the tool is meant to be able to work with many different sources of data and integrate into different projects, I created a full plugin feature set that allows for additional functionality to be installed into the CSA tool through RPM packages without modifying the core code base at all. One of the requirements when developing the plugin system was that there needed to be a way to issue C2 (Command and Control) messages to other services allowing them to take specific actions to either defend or attack a specific computer in some fashion. To accomplish this I created a system that allows for the user to issue predefined commands through JMS to other applications, and then be informed of the results of the commands through visual changes of icons and new notifications. These predefined C2 messages, along with the actions and responses that they allow, are created and defined in the external plugin using a basic framework to integrate into the main CSA tool.\r\n\r\nAdditionally, there was a need to be able to quickly deploy the application, so I wrote an installer for the tool using RPMs hosted in a private YUM repository I set up. This also required writing several scripts to manage the install, as well as creating a wizard in the application itself to allow for user input of some required information. At the same time I set up a [Jenkins ](http://jenkins-ci.org/) build server to manage the packaging of new releases of CSA, as well as regenerating the documentation in the code through [NaturalDocs](http://www.naturaldocs.org/), creating a combined and minified version of the JavaScript through [Google Closure](https://developers.google.com/closure/compiler/), and running the unit tests.\r\n\r\n### Leading Development Forward\r\n\r\nAs the project matured, I moved into the lead engineer position for the team, and had to take on additional responsibility both in managing fellow team mates by providing tasking and mentorship, serving as a point of contact for all of the other teams interested in using CSA's capabilities and providing demos for potential customers.\r\n\r\nCSA has now been successfully integrated into several other projects that Northrop Grumman is developing, and the future seems bright for new contracts.",
+      "short_lead": "IP-Space visualization tool for Situational Awareness",
+      "primary": 1,
+      "images": [
+        1
+      ],
+      "languages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  }
+]

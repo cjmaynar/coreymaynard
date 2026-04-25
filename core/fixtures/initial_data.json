@@ -1,0 +1,374 @@
+[
+  {
+    "model": "core.image",
+    "pk": 1,
+    "fields": {
+      "title": "Crew - Home Page",
+      "fullsize": "uploads/crew1_home.png",
+      "small": "uploads/small/crew1_home.png",
+      "source": "Personal",
+      "desc": "The home page of the Central Florida Rowing site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 2,
+    "fields": {
+      "title": "Crew - Contact Us",
+      "fullsize": "uploads/crew1_contact.png",
+      "small": "uploads/small/crew1_contact.png",
+      "source": "Personal",
+      "desc": "The Contact Page of Central Florida Rowing",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 3,
+    "fields": {
+      "title": "Crew - Code 1",
+      "fullsize": "uploads/crew1_screenshot1.png",
+      "small": "uploads/small/crew1_screenshot1.png",
+      "source": "Personal",
+      "desc": "Code from the sidebar of the UCF Crew site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 4,
+    "fields": {
+      "title": "Crew - Code 2",
+      "fullsize": "uploads/crew1_screenshot2.png",
+      "small": "uploads/small/crew1_screenshot2.png",
+      "source": "Personal",
+      "desc": "Code from the functions file of the UCF Crew site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 5,
+    "fields": {
+      "title": "Crew - Race Results",
+      "fullsize": "uploads/crew1_results.png",
+      "small": "uploads/small/crew1_results.png",
+      "source": "Personal",
+      "desc": "The results page for Central Florida Rowing",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 6,
+    "fields": {
+      "title": "Portfolio3 - Contact",
+      "fullsize": "uploads/port_contact.png",
+      "small": "uploads/small/port_contact.png",
+      "source": "Personal",
+      "desc": "The Contact Page for my old portfolio site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 7,
+    "fields": {
+      "title": "Portfolio3 - Home Page",
+      "fullsize": "uploads/port_home.png",
+      "small": "uploads/small/port_home.png",
+      "source": "Personal",
+      "desc": "The Home page for my old portfolio site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 8,
+    "fields": {
+      "title": "Portfolio3 - Post",
+      "fullsize": "uploads/port_post.png",
+      "small": "uploads/small/port_post.png",
+      "source": "Personal",
+      "desc": "A blog post from my old portfolio site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 9,
+    "fields": {
+      "title": "Portfolio3 - Code 1",
+      "fullsize": "uploads/port_screenshot1.png",
+      "small": "uploads/small/port_screenshot1.png",
+      "source": "Personal",
+      "desc": "The code for the home page of my old portfolio site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 10,
+    "fields": {
+      "title": "Portfolio3 - Code 2",
+      "fullsize": "uploads/port_screenshot2.png",
+      "small": "uploads/small/port_screenshot2.png",
+      "source": "Personal",
+      "desc": "The code to save and modify blog posts for my old portfolio site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 11,
+    "fields": {
+      "title": "Portfolio3 - Code 3",
+      "fullsize": "uploads/port_screenshot3.png",
+      "small": "uploads/small/port_screenshot3.png",
+      "source": "Personal",
+      "desc": "The code to run the blog PHP class for my old portfolio site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 12,
+    "fields": {
+      "title": "Techrangers - Home",
+      "fullsize": "uploads/techrangers_home.png",
+      "small": "uploads/small/techrangers_home.png",
+      "source": "Personal",
+      "desc": "The home page for the Techrangers@CDWS site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 13,
+    "fields": {
+      "title": "Techrangers - Join Us",
+      "fullsize": "uploads/techrangers_join.png",
+      "small": "uploads/small/techrangers_join.png",
+      "source": "Personal",
+      "desc": "The Join Us Page for the Techrangers@CDWS website",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 14,
+    "fields": {
+      "title": "Techrangers - Showcase",
+      "fullsize": "uploads/techrangers_showcase.png",
+      "small": "uploads/small/techrangers_showcase.png",
+      "source": "Personal",
+      "desc": "The showcase page for Techrangers@CDWS",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 15,
+    "fields": {
+      "title": "Techrangers - Code 1",
+      "fullsize": "uploads/techrangers_screenshot2.png",
+      "small": "uploads/small/techrangers_screenshot2.png",
+      "source": "Personal",
+      "desc": "A snippit of code from the functions file of the Techrangers@CDWS web site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 16,
+    "fields": {
+      "title": "Techrangers - Code 2",
+      "fullsize": "uploads/techrangers_screenshot3.png",
+      "small": "uploads/small/techrangers_screenshot3.png",
+      "source": "Personal",
+      "desc": "A snippit of code from the functions file of the Techrangers@CDWS web site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 17,
+    "fields": {
+      "title": "Techrangers - Code 3",
+      "fullsize": "uploads/techrangers_screenshot4.png",
+      "small": "uploads/small/techrangers_screenshot4.png",
+      "source": "Personal",
+      "desc": "A snippit of code from the functions file of the Techrangers@CDWS web site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 18,
+    "fields": {
+      "title": "Central Florida Rowing v2 - Admin",
+      "fullsize": "uploads/crewnew_admin.png",
+      "small": "uploads/small/crewnew_admin.png",
+      "source": "Personal",
+      "desc": "A screenshot of the administrator dashboard for v2 of the Central Florida Rowing site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 19,
+    "fields": {
+      "title": "Central Florida Rowing v2 - Alumni",
+      "fullsize": "uploads/crewnew_alumni_form.png",
+      "small": "uploads/small/crewnew_alumni_form.png",
+      "source": "Personal",
+      "desc": "A screenshot of the alumni page for v2 of the Central Florida Rowing site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 20,
+    "fields": {
+      "title": "Central Florida Rowing v2 - Home Page",
+      "fullsize": "uploads/crewnew_home.png",
+      "small": "uploads/small/crewnew_home.png",
+      "source": "Personal",
+      "desc": "A screenshot of the home page for v2 of the Central Florida Rowing site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 21,
+    "fields": {
+      "title": "Central Florida Rowing v2 - Photos",
+      "fullsize": "uploads/crewnew_photos.png",
+      "small": "uploads/small/crewnew_photos.png",
+      "source": "Personal",
+      "desc": "A screenshot of the photos page for v2 of the Central Florida Rowing site",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 22,
+    "fields": {
+      "title": "Central Florida Rowing v2 - Code",
+      "fullsize": "uploads/crewnew_screenshot1.png",
+      "small": "uploads/small/crewnew_screenshot1.png",
+      "source": "Personal",
+      "desc": "A snippit of code from v2 of Central Florida Rowing",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 23,
+    "fields": {
+      "title": "Central Florida Rowing v2 - Code",
+      "fullsize": "uploads/crewnew_screenshot2.png",
+      "small": "uploads/small/crewnew_screenshot2.png",
+      "source": "Personal",
+      "desc": "A snippit of code from v2 of Central Florida Rowing",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 24,
+    "fields": {
+      "title": "Central Florida Rowing v2 - Code",
+      "fullsize": "uploads/crewnew_screenshot3.png",
+      "small": "uploads/small/crewnew_screenshot3.png",
+      "source": "Personal",
+      "desc": "A snippit of code from v2 of Central Florida Rowing",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 25,
+    "fields": {
+      "title": "To Be Done 3 - Inbox",
+      "fullsize": "uploads/tbd3_inbox.png",
+      "small": "uploads/small/tbd3_inbox.png",
+      "source": "Personal",
+      "desc": "A screenshot of the personal inbox for TBD3",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 26,
+    "fields": {
+      "title": "To Be Done 3 - Create Template",
+      "fullsize": "uploads/tbd3_create_template.png",
+      "small": "uploads/small/tbd3_create_template.png",
+      "source": "Personal",
+      "desc": "A screenshot of the Create Template page in TBD3",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 27,
+    "fields": {
+      "title": "To Be Done 3 - View Request",
+      "fullsize": "uploads/tbd3_view_request.png",
+      "small": "uploads/small/tbd3_view_request.png",
+      "source": "Personal",
+      "desc": "A screenshot of the View Request page of TBD3",
+      "use": 1
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 28,
+    "fields": {
+      "title": "To Be Done 3 - Code",
+      "fullsize": "uploads/tbd3_screenshot2.png",
+      "small": "uploads/small/tbd3_screenshot2.png",
+      "source": "Personal",
+      "desc": "A snippit of code from To Be Done 3",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 29,
+    "fields": {
+      "title": "To Be Done 3 - Code",
+      "fullsize": "uploads/tbd3_screenshot3.png",
+      "small": "uploads/small/tbd3_screenshot3.png",
+      "source": "Personal",
+      "desc": "A snippit of code from the functions file of the Techrangers@CDWS web site",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 30,
+    "fields": {
+      "title": "To Be Done 3 - Code",
+      "fullsize": "uploads/tbd3_screenshot4.png",
+      "small": "uploads/small/tbd3_screenshot4.png",
+      "source": "Personal",
+      "desc": "A snippit of code from To Be Done 3",
+      "use": 2
+    }
+  },
+  {
+    "model": "core.image",
+    "pk": 31,
+    "fields": {
+      "title": "To Be Done 3 - Code",
+      "fullsize": "uploads/tbd3_screenshot5.png",
+      "small": "uploads/small/tbd3_screenshot5.png",
+      "source": "Personal",
+      "desc": "A snippit of code from To Be Done 3",
+      "use": 2
+    }
+  }
+]
