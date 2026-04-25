@@ -1,11 +1,14 @@
 '''Production settings file'''
+import os
+import dj_database_url
 from .common import *
 
-DEBUG = True
-PRODUCTION = False
+DEBUG = False
+PRODUCTION = True
 
-TEMPLATE_DEBUG = True
-TEMPLATE_STRING_IF_INVALID = 'NOT FOUND:%s'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME', '')]
 
 USER_NAME = 'cjmaynar'
 NAME = 'Corey Maynard'
@@ -19,19 +22,18 @@ MANAGERS = ADMINS
 EMAIL_HOST = ""
 EMAIL_PORT = ""
 
-# Source the secret key
-try:
-    from secret import SECRET_KEY
-except ImportError:
-    SECRET_KEY = None
+# WhiteNoise for static file serving
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+] + MIDDLEWARE[1:]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# PostgreSQL via DATABASE_URL env var
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-        }
+    'default': dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }

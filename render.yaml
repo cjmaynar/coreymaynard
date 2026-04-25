@@ -1,0 +1,29 @@
+databases:
+  - name: coreymaynard-db
+    databaseName: coreymaynard
+    user: coreymaynard
+    region: ohio
+    plan: free
+
+services:
+  - type: web
+    name: coreymaynard
+    runtime: python
+    region: ohio
+    plan: free
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --no-input && python manage.py migrate
+    startCommand: gunicorn wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: settings.prod
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: coreymaynard-db
+          property: connectionString
+      - key: RENDER_EXTERNAL_HOSTNAME
+        fromService:
+          type: web
+          name: coreymaynard
+          property: host
