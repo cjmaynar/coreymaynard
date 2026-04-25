@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}R&eacute;sum&eacute;{% endblock %}
 
 {% block specific_css %}
-<link rel="stylesheet" href="/files/css/resume.css" media="screen" />
+<link rel="stylesheet" href="{% static 'css/resume.css' %}" media="screen" />
 {% endblock %}
 
 {% block content %}
@@ -64,7 +65,7 @@
         <hr />
 
         <h4 id="cdl">Center for Distributed Learning &ndash; <a href="http://www.cdl.ucf.edu">www.cdl.ucf.edu</a><span class="title">Web Developer</span><span class="dates">2008 &ndash; 2010</span></h4>
-        
+
         <ul>
             <li>Redbeard / To Be Done 3
                 <ul>
@@ -85,11 +86,10 @@
         </ul>
 
         <hr />
-        
+
         <h4 id="cfl">Central Florida Future &ndash; <a href="http://www.centralfloridafuture.com/">www.centralfloridafuture.com</a><span class="title">Staff Photographer</span><span class="dates">2006 &ndash; 2008</span></h4>
         <ul>
             <li>Traveled throughout the area photographing local news and sports events</li>
-            <li>View my work on <a href="http://www.flickr.com/photos/viperstrike">Flickr</a></li>
         </ul>
     </div>
 
