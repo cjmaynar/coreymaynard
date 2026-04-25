@@ -3,7 +3,7 @@ import os
 import dj_database_url
 from .common import *
 
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 PRODUCTION = True
 
 SECRET_KEY = os.environ.get('SECRET_KEY')

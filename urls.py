@@ -15,7 +15,7 @@ urlpatterns = [
     path("bio/", BioView.as_view(), name='bio'),
     path("resume/", ResumeView.as_view(), name='resume'),
     path("contact/", ContactView.as_view(), name='contact'),
-    path("robots\.txt", TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    path("robots.txt", TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 ]
 
 if not settings.PRODUCTION:
