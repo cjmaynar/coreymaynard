@@ -1,8 +1,10 @@
 Django<=4.3
-pillow
-ipython
+bleach
+dj-database-url
 django-markup
 gunicorn
+ipython
+markdown
+pillow
 psycopg2-binary
-dj-database-url
 whitenoise
