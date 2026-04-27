@@ -8,7 +8,7 @@ hr {
 }
 
 #resume {
-    width: 80%;
+    overflow: hidden;
     font-size: 1.1em;
 }
 #center { text-align: center; display: block; }
@@ -59,4 +59,17 @@ hr {
 }
 #double li {
     width: 50%;
+}
+
+@media (max-width: 960px) {
+    #resume .dates {
+        float: none;
+        width: auto;
+        height: auto;
+        margin-top: 4px;
+        display: inline-block;
+    }
+    #double li {
+        width: 100%;
+    }
 }

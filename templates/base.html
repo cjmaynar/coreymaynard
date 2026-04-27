@@ -16,6 +16,7 @@
 	<body>
 	<div id="header">
 		<h1><a href="{% url 'index' %}"><span>Corey</span> Maynard</a></h1>
+		<button id="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation">&#9776;</button>
 	</div>
 	<div id="content">
     {% if messages %}
@@ -43,7 +44,7 @@
 			<li>There doesn't appear to be anything here...</li>
 			{% endfor %}
 		</ol>
-		<p>Not enough? Get your fix at the <a href="{% url 'blog_archives' %}">Archives</a>. Or, subscribe to <abbr title="Really Simple Syndication"><a href="{% url 'blog_rss' %}">RSS</a></abbr> feed.</p>
+		<p>Not enough? Get your fix at the <a href="{% url 'blog_archives' %}">Archives</a>.</p>
 		</div>
 		<div id="music">
 		<h3>Categories</h3>
@@ -81,5 +82,18 @@
     pageTracker._trackPageview();
     </script>
     {% endif %}
+	<script>
+	(function() {
+		var btn = document.getElementById('nav-toggle');
+		var sidebar = document.getElementById('sidebar');
+		if (!btn || !sidebar) { return; }
+		// Start hidden on mobile
+		sidebar.classList.add('nav-hidden');
+		btn.addEventListener('click', function() {
+			var hidden = sidebar.classList.toggle('nav-hidden');
+			btn.setAttribute('aria-expanded', String(!hidden));
+		});
+	})();
+	</script>
 	</body>
 </html>

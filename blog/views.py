@@ -1,27 +1,8 @@
-from django.contrib.syndication.views import Feed
 from django.urls import reverse
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
 
 from .models import Post, Category
-
-
-class LatestPosts(Feed):
-    title = "Coreymaynard.com Blog"
-    link = "/blog/"
-    description = "The somewhat frequently updated thoughts of Corey Maynard"
-
-    def items(self):
-        return Post.objects.order_by('-date')[:10]
-
-    def item_title(self, item):
-        return item.title
-
-    def item_description(self, item):
-        return item.lead
-
-    def item_link(self, item):
-        return reverse('blog_detail', args=[item.slug])
 
 
 class PostList(ListView):

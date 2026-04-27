@@ -143,6 +143,9 @@ input[type='submit']:hover { background:rgb(29,148,173); }
  * * * * * * */
 
 #header {
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
 	border-bottom:5px solid #cdd3d4;
 	border-top:1px solid #000;
 	padding:0 10px;
@@ -169,7 +172,7 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 
 #list-posts .info li { display:inline-block }
 #list-posts .info li:after {
-	color:rgb(79,200,225); 
+	color:rgb(79,200,225);
 	content:'|';
 	padding-left:5px;
 }
@@ -200,15 +203,20 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 	clear:both;
 }
 #footer #footer-contents {
-	width:960px;
+	max-width:960px;
+	width:100%;
+	box-sizing:border-box;
+	padding:0 15px;
 	margin:0 auto;
+	display:flex;
+	flex-wrap:nowrap;
 }
 #footer h3 { text-align:center; }
 #footer #updates,
 #footer #music,
 #footer #about-me {
-	float:left;
-	width:290px;
+	flex:1 1 0;
+	min-width:0;
 	padding:10px;
 }
 #footer #copy {
@@ -242,7 +250,7 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 }
 
 #lead-ins {
-	width:350px;
+	width:45%;
 	float:right;
 }
 #lead-ins h3 { line-height:1.3em; }
@@ -320,4 +328,97 @@ input[type='submit']:hover { background:rgb(29,148,173); }
 	margin:10px;
 	border:1px solid rgba(166,130,54,.4);
 	-moz-box-shadow:2px 2px 5px rgba(0,0,0,.5);
+}
+
+#nav-toggle {
+	display:none;
+}
+
+/* * * * * * * * * * *
+ * Responsive Layout *
+ * * * * * * * * * * */
+
+@media (max-width: 768px) {
+
+	/* Hamburger button */
+	#nav-toggle {
+		display:inline-block;
+		background:none;
+		border:1px solid #808387;
+		border-radius:4px;
+		padding:6px 10px;
+		font-size:1.4em;
+		cursor:pointer;
+		color:#5c5c5c;
+		vertical-align:middle;
+		margin-left:12px;
+	}
+	#nav-toggle:hover { background:#e3e3e3; }
+
+	/* Sidebar — stacks above main content */
+	#sidebar {
+		float:none;
+		width:auto;
+		margin:0 0 20px 0;
+	}
+
+	/* Nav links flow horizontally and wrap */
+	#nav ul {
+		display:flex;
+		flex-wrap:wrap;
+		gap:4px;
+	}
+	#nav ul li { margin:0; }
+	#nav ul li a {
+		width:auto;
+		height:auto;
+		padding:6px 10px;
+	}
+
+	/* Hide nav by default on mobile; toggled via JS */
+	#sidebar.nav-hidden #nav { display:none; }
+
+	/* Homepage lead sections stack */
+	#lead {
+		float:none;
+		width:100%;
+	}
+	#lead-ins {
+		float:none;
+		width:100%;
+		margin-top:10px;
+	}
+	#you-do { clear:none; }
+
+	/* Footer three columns stack */
+	#footer #footer-contents {
+		flex-direction:column;
+	}
+	#footer #updates,
+	#footer #music,
+	#footer #about-me {
+		flex:none;
+		width:100%;
+		box-sizing:border-box;
+	}
+	#footer #copy { clear:none; }
+
+	/* Inner page wrappers go full width */
+	#wrapper,
+	#project,
+	#post { width:100%; }
+
+	/* Code blocks don't overflow */
+	code {
+		width:auto;
+		max-width:100%;
+		box-sizing:border-box;
+	}
+
+	/* User messages full width */
+	#user-messages { width:90%; }
+
+	/* Blog post list adjustments */
+	#list-posts .post { width:100%; }
+	#list-posts .comments { float:none; }
 }
