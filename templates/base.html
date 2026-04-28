@@ -12,19 +12,19 @@
         <script type="text/javascript" src="{% static 'core/js/main.js' %}"></script>
 		{% block specific_js %}
 		{% endblock %}
+        {% if is_production %}
+        <!--Tracking Information-->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YQXS5KNTP"></script>
+        <script>
+              window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-6YQXS5KNTP');
+        </script>
+        {% endif %}
 	</head>
 
-    {% if is_production %}
-    <!--Tracking Information-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YQXS5KNTP"></script>
-    <script>
-          window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-6YQXS5KNTP');
-    </script>
-    {% endif %}
 
 	<body>
 	<div id="header">

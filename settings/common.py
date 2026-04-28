@@ -57,6 +57,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'core.context_processors.recent_posts',
                 'core.context_processors.categories',
+                'core.context_processors.is_production',
             ],
         },
     },
