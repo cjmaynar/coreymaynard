@@ -13,6 +13,19 @@
 		{% block specific_js %}
 		{% endblock %}
 	</head>
+
+    {% if is_production %}
+    <!--Tracking Information-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YQXS5KNTP"></script>
+    <script>
+          window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-6YQXS5KNTP');
+    </script>
+    {% endif %}
+
 	<body>
 	<div id="header">
 		<h1><a href="{% url 'index' %}"><span>Corey</span> Maynard</a></h1>
@@ -69,19 +82,8 @@
 		</div>
 
 	</div>
-	<p id="copy">&copy; 2008&ndash;2013, <a href="{% url 'contact' %}">Corey Maynard</a></p>
+	<p id="copy">&copy; 2008&ndash;2026, <a href="{% url 'contact' %}">Corey Maynard</a></p>
 	</div>
-    {% if is_production %}
-    <!--Tracking Information-->
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    var pageTracker = _gat._getTracker("UA-4893395-2");
-    pageTracker._trackPageview();
-    </script>
-    {% endif %}
 	<script>
 	(function() {
 		var btn = document.getElementById('nav-toggle');
